@@ -1,0 +1,21 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ["~"]
+
+- link:
+    ~/.xinitrc: .xinitrc
+    ~/.zshenv: .zshenv
+    ~/.profile: .profile
+    ~/.config/.tmux.conf: .tmux.conf
+    ~/.config/starship.toml: starship.toml
+    ~/.config/aliasrc: aliasrc
+    ~/.config/rofi: rofi
+    ~/.config/redshift: redshift
+    ~/.config/alacritty: alacritty
+    ~/.config/i3: i3
+    ~/.config/picom: picom
+    ~/.config/nvim: nvim
+    ~/.config/dunst: dunst
+    ~/.config/zsh: zsh

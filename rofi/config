@@ -1,0 +1,4 @@
+rofi.combi-modi:    	window,drun,run
+rofi.font:          	Inconsolata for Powerline 14
+rofi.modi:          	combi
+rofi.theme:		~/.cache/wal/colors-rofi-dark.rasi
