@@ -1,10 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/ktz/.config/zsh'
+let g:netrw_dirhist_1='/home/ktz/.config/spotifyd/spotifyd.conf'
+let g:netrw_dirhist_0='/home/ktz/git/my-scripts/gspread-updater'
+let g:netrw_dirhist_9='/home/ktz/.config/redshift'
 let g:netrw_dirhist_8='/home/ktz/.config/zsh'
 let g:netrw_dirhist_7='/home/ktz/git/awesome-copycats'
 let g:netrw_dirhist_6='/home/ktz/git/st'
 let g:netrw_dirhist_5='/home/ktz/.config/zsh'
 let g:netrw_dirhist_4='/home/ktz/.config/picom'
 let g:netrw_dirhist_3='/home/ktz/.scripts'
-let g:netrw_dirhist_2='/home/ktz'
-let g:netrw_dirhist_1='/home/ktz/.scripts'

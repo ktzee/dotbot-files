@@ -22,6 +22,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" emmet
+Plug 'mattn/emmet-vim'
+
 " Code search with ack - actually using "ag" - the_silver_searcher
 Plug 'mileszs/ack.vim'
 call plug#end()

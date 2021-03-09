@@ -8,6 +8,9 @@
     ~/.xinitrc: .xinitrc
     ~/.zshenv: .zshenv
     ~/.profile: .profile
+    ~/.gitconfig: .gitconfig
+    ~/.scripts: .scripts
+    ~/.config/spotifyd: spotifyd
     ~/.config/.tmux.conf: .tmux.conf
     ~/.config/starship.toml: starship.toml
     ~/.config/aliasrc: aliasrc
