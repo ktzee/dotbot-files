@@ -103,12 +103,14 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey "^e" edit-command-line
 
 # nvm
-source /usr/share/nvm/init-nvm.sh
+[ -f "/usr/share/nvm/init-nvm" ] && source /usr/share/nvm/init-nvm.sh
+
+# wal sequence
+[ -f "$HOME/.cache/wal/sequences" ] && (/usr/bin/cat ~/.cache/wal/sequences &)
 
 # Load zsh-syntax-highlighting; should be last. Needs to be installed (zsh-syntax-highlighting AUR)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
 # Load profile
 source /home/ktz/.config/zsh/.zprofile
-(/usr/bin/cat ~/.cache/wal/sequences &)
 eval "$(starship init zsh)"
