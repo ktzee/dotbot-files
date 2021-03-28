@@ -260,7 +260,7 @@ exec --no-startup-id .scripts/setdisplay.sh
 # exec feh --bg-scale $HOME/.config/i3/wallpaper 
 
 # set color scheme
-exec wal -R -n
+exec wal -R
 
 #################
 # Monitor Setup #
