@@ -10,6 +10,7 @@
     ~/.profile: .profile
     ~/.gitconfig: .gitconfig
     ~/.scripts: .scripts
+    ~/.gitconfig: .gitconfig
     ~/.config/spotifyd: spotifyd
     ~/.config/.tmux.conf: .tmux.conf
     ~/.config/starship.toml: starship.toml

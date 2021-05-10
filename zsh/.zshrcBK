@@ -1,14 +1,31 @@
-# Add colors
-autoload -U colors && colors
+# # Add colors
+# autoload -U colors && colors
 
-# Custom PS1
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+# # Custom PS1
+# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
-# Load aliases and shortcuts if existent.
+# # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
-# Load completion
+# # Add fzf support
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+
+# Use fd (https://github.com/sharkdp/fd) instead of the default find
+# command for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
+# # Load completion
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
@@ -26,7 +43,7 @@ bindkey '^[[B' history-search-forward
 # Delete
 bindkey '^[[P' delete-char
 
-# Home/End
+# # Home/End
 bindkey '^[[H'  beginning-of-line
 bindkey '^[[4~'  end-of-line
 
@@ -86,10 +103,15 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey "^e" edit-command-line
 
 # nvm
-source /usr/share/nvm/init-nvm.sh
+[ -f "/usr/share/nvm/init-nvm.sh" ] && source /usr/share/nvm/init-nvm.sh
 
-# Load zsh-syntax-highlighting; should be last. Needs to be installed (zsh-syntax-highlighting AUR)
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+# wal sequence
+[ -f "$HOME/.cache/wal/sequences" ] && (/usr/bin/cat ~/.cache/wal/sequences &)
 
 # Load profile
 source /home/ktz/.config/zsh/.zprofile
+# Load starship if installed
+eval "$(starship init zsh)"
+
+# Load zsh-syntax-highlighting; should be last. Needs to be installed (zsh-syntax-highlighting AUR)
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
