@@ -106,7 +106,7 @@ bindkey "^e" edit-command-line
 [ -f "/usr/share/nvm/init-nvm.sh" ] && source /usr/share/nvm/init-nvm.sh
 
 # wal sequence
-[ -f "$HOME/.cache/wal/sequences" ] && (/usr/bin/cat ~/.cache/wal/sequences &)
+# [ -f "$HOME/.cache/wal/sequences" ] && (/usr/bin/cat ~/.cache/wal/sequences &)
 
 # Load profile
 source /home/ktz/.config/zsh/.zprofile
