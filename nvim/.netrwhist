@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/ktz/.config'
+let g:netrw_dirhist_3='/home/ktz/.config/rofi-pass'
+let g:netrw_dirhist_2='/home/ktz/git/exilence-next/ExilenceNextApp/node_modules/errlop'
 let g:netrw_dirhist_1='/home/ktz/.config/kitty'
 let g:netrw_dirhist_0='/home/ktz'
 let g:netrw_dirhist_9='/home/ktz/.npm'
@@ -7,6 +10,3 @@ let g:netrw_dirhist_8='/home/ktz/.npm/node-sass'
 let g:netrw_dirhist_7='/home/ktz/.npm'
 let g:netrw_dirhist_6='/home/ktz/.config/alacritty'
 let g:netrw_dirhist_5='/etc/skel'
-let g:netrw_dirhist_4='/home/ktz/.cache/wal'
-let g:netrw_dirhist_3='/home/ktz/git/my-scripts/.git'
-let g:netrw_dirhist_2='/home/ktz/.config/zsh'

@@ -1,1 +1,1 @@
-alias ll="exa -alh" tmux="tmux -f ~/.config/.tmux.conf" vim="nvim" gitfullclean="make clean && rm -f config.h && git reset --hard origin/master"
+alias ll="exa -alh --icons" tmux="tmux -f ~/.config/.tmux.conf" vim="nvim" gitfullclean="make clean && rm -f config.h && git reset --hard origin/master"
