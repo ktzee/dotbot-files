@@ -1,33 +1,55 @@
-# Disable the newline at the start of the prompt
-add_newline = false
+add_newline = false 
 
-format = "$hostname $directory $cmd_duration $character"
-
-# format = "[$path](bold yellow) [$read_only](bold red)"
-
-
-[line_break]
-disabled = true
-
-# Wait 10 milliseconds for starship to check files under the current directory.
-scan_timeout = 10
-
-[character]
-success_symbol = "[➜](bold green) "
-error_symbol = "[✗](bold red) "
+format = """$git_branch $git_status $git_state $git_commit
+$cmd_duration$python$username$hostname$directory$character"""
 
 [cmd_duration]
-min_time = 0
-format = " [$duration](bold yellow)"
-show_notifications = true
-min_time_to_notify = 45_000
+min_time = 500 
+format = "[($duration )](bold yellow)"
+[python]
+style = 'bold green'
+format ='[( $virtualenv):](bold green)'
 
 [directory]
-truncation_length = 3 
-truncation_symbol = "../"
-read_only = " "
+style = "bold cyan"
+read_only_style = "red"
+format = "[$path ]($style)[$read_only]($read_only_style)"
+read_only = " "
+
+[username]
+style_user = "white bold"
+style_root = "black bold"
+format = "[$user]($style)"
+disabled = false
+show_always = true
 
 [hostname]
 ssh_only = false
-trim_at = "." 
-format = "[$hostname]()"
+format =  "[@](bold yellow)[$hostname](bold red) "
+disabled = false
+
+[git_branch]
+symbol = "שׂ "
+format = "[($symbol$remote_name$remote_branch$branch )](bold purple)"
+truncation_length = 6 
+truncation_symbol = ""
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = "🏷 "
+
+
+# [git_status]
+# conflicted	"="	This branch has merge conflicts.
+# ahead	"⇡"	The format of ahead
+# behind	"⇣"	The format of behind
+# diverged	"⇕"	The format of diverged
+# untracked	"?"	The format of untracked
+# stashed	"$"	The format of stashed
+# modified	"!"	The format of modified
+# staged	"+"	The format of staged
+# renamed	"»"	The format of renamed
+# deleted	"✘"	The format of deleted
+# style	"bold red"	The style for the module.
+# disabled	false	Disables the git_status module.
+

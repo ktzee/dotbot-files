@@ -14,7 +14,9 @@
 # then uncomment the following line to make Meta + arrow keys mapping work
 #set -ga terminal-overrides "*:kUP3=\e[1;9A,*:kDN3=\e[1;9B,*:kRIT3=\e[1;9C,*:kLFT3=\e[1;9D"
 
-
+# double C-a bounces between last 2 windows
+bind-key C-a last-window
+bind-key C-s last-session
 # -- windows & pane creation ---------------------------------------------------
 
 # new window retains current path, possible values are:
