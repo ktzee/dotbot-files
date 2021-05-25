@@ -16,7 +16,6 @@
 
 # double C-a bounces between last 2 windows
 bind-key C-a last-window
-bind-key C-s last-session
 # -- windows & pane creation ---------------------------------------------------
 
 # new window retains current path, possible values are:
