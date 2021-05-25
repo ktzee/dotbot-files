@@ -9,8 +9,8 @@
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 # # Add fzf support
-[ -f "/usr/share/fzf/completion.zsh" ] source /usr/share/fzf/completion.zsh
-[ -f "/usr/share/fzf/key-bindings.zsh" ] source /usr/share/fzf/key-bindings.zsh
+[ -f "/usr/share/fzf/completion.zsh" ] && source /usr/share/fzf/completion.zsh
+[ -f "/usr/share/fzf/key-bindings.zsh" ] && source /usr/share/fzf/key-bindings.zsh
 
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
 # command for listing path candidates.
