@@ -1,3 +1,7 @@
 nvim/plugged/*
+nvim/.netrwhist
 zsh/.zcompdump
 zsh/_deno
+zsh/.zsh_history
+zsh/.zdirs
+zsh/.cache

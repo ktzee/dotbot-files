@@ -12,7 +12,8 @@
     ~/.scripts: .scripts
     ~/.gitconfig: .gitconfig
     ~/.config/spotifyd: spotifyd
-    ~/.config/.tmux.conf: .tmux.conf
+    ~/.tmux.conf: .tmux.conf
+    ~/.tmux.conf.local: .tmux.conf.local
     ~/.config/starship.toml: starship.toml
     ~/.config/aliasrc: aliasrc
     ~/.config/rofi: rofi
