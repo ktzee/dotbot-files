@@ -207,7 +207,7 @@ bindsym $mod+d exec rofi -show combi
 # bindsym $mod+shift+d exec rofi -show drun
 
 # rofi-pass
-bindsym $mod+shift+d exec rofi-pass
+bindsym $mod+grave exec rofi-pass
 
 # Lock screen
 bindsym	$mod+Ctrl+l exec i3lock --color 111111
@@ -260,6 +260,8 @@ exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 # redshift
 exec --no-startup-id redshift-qt
 
+# polkit-dumb-agent
+exec --no-startup-id polkit-dumb-agent
 # xrandr script
 exec --no-startup-id .scripts/setdisplay.sh
 
