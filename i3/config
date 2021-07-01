@@ -265,6 +265,7 @@ exec --no-startup-id polkit-dumb-agent
 # xrandr script
 exec --no-startup-id .scripts/setdisplay.sh
 
+exec --no-startup-id syncthing
 # set wallpaper
 # exec feh --bg-scale $HOME/.config/i3/wallpaper 
 
