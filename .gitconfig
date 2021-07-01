@@ -1,9 +1,7 @@
 [user]
-	email = k.dconsoli@gmail.com
+	email = giuseppe@ktz.one
 	name = Giuseppe Daniele Consoli
-#	email = peppe877@gmail.com
-#	name = Giuseppe Consoli
-#
+
 [color]
 	interactive = true
 	branch = true
