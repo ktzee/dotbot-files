@@ -248,6 +248,8 @@ for_window [title="^pinentry"] floating enable
 # geoclue
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 
+# blueman
+exec --no-startup-id blueman-applet
 # nm-applet
 exec --no-startup-id nm-applet
 
@@ -270,7 +272,7 @@ exec --no-startup-id syncthing
 # exec feh --bg-scale $HOME/.config/i3/wallpaper 
 
 # set color scheme
-exec wal -R
+exec wal -Rst
 
 #################
 # Monitor Setup #
