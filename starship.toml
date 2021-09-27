@@ -25,7 +25,7 @@ show_always = true
 
 [hostname]
 ssh_only = false
-format =  "[@](bold yellow)[$hostname](bold red) "
+format =  "[@](bold yellow)[$hostname](bold #DC322F) "
 disabled = false
 
 [git_branch]
