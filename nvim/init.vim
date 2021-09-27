@@ -109,6 +109,7 @@ let g:go_info_mode='gopls'
 "}}}
 " " key bindings " {{{
 "--------------------"
+let mapleader = "," "map leader to ,
 " Toggles NERDTree
 map <leader>t : NERDTreeToggle<CR>
 "map <leader>t : Lexplore<CR>
