@@ -308,7 +308,9 @@ assign [class="Brave-browser"] $wsq
 assign [class="Signal"] $ws3
 assign [class="discord"] $ws3
 assign [class="Hexchat"] $ws3
+assign [class="Ferdi"] $ws3
 assign [class="Steam"] $ws6
+assign [class="Lutris"] $ws6
 for_window [class="Rambox"] move to workspace $ws3
 for_window [class="Spotify"] move to workspace $ws7
 
