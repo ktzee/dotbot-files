@@ -2,3 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "i3/i3blocks/scripts/i3blocks-markets"]
+	path = i3/i3blocks/scripts/i3blocks-markets
+	url = git@github.com:DWShuo/i3blocks-markets.git
