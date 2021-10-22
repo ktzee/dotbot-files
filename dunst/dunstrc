@@ -51,6 +51,8 @@
     # ignore newlines '\n' in notifications
     ignore_newline = no
 
+    # Position of the notification on the screen
+    origin = bottom-right
 
     # the geometry of the window
     # geometry [{width}]x{height}][+/-{x}+/-{y}]
