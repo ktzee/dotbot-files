@@ -227,7 +227,7 @@ bindsym $mod+F1 exec feh --no-startup-id ~/.config/i3/popups/vi-vim-cheat-sheet.
 
 
 ##################
-# Custom Windows #
+# Window Custome #
 ##################
 
 # disable titlebars
@@ -240,6 +240,12 @@ gaps outer 3
 # images always float
 for_window [class="feh"] floating enable
 
+# awakened poe trade always float
+for_window [class="steam_app_238960"] floating enable
+assign [class="steam_app_238960"] $ws4
+for_window [class="awakened-poe-trade"] floating enable
+for_window [class="poe-overlay"] floating enable
+assign [class="steam_app_306130"] $ws4
 # Always float windows with title 'clipqr'.
 # This is for the clipqr.sh script which generates a QR code from clipboard.
 for_window [title="^clipqr$"] floating enable
