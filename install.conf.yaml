@@ -6,6 +6,7 @@
 
 - link:
     ~/.xinitrc: .xinitrc
+    ~/.Xresources: .Xresources
     ~/.xprofile: .xprofile
     ~/.zshenv: .zshenv
     ~/.profile: .profile
