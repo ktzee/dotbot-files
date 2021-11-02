@@ -2,4 +2,4 @@
 
 # exalted orb
 
-curl -s -X GET "https://poe.ninja/api/data/CurrencyHistory?league=Ultimatum&type=Currency&currencyId=2" | jq ."receiveCurrencyGraphData[-1].value"
+curl -s -X GET "https://poe.ninja/api/data/CurrencyHistory?league=Scourge&type=Currency&currencyId=2" | jq ."receiveCurrencyGraphData[-1].value"
