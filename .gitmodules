@@ -5,3 +5,6 @@
 [submodule "i3/i3blocks/scripts/i3blocks-markets"]
 	path = i3/i3blocks/scripts/i3blocks-markets
 	url = git@github.com:DWShuo/i3blocks-markets.git
+[submodule "voidrice"]
+	path = voidrice
+	url = git@github.com:LukeSmithxyz/voidrice.git
