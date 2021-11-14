@@ -239,13 +239,12 @@ gaps outer 3
 
 # images always float
 for_window [class="feh"] floating enable
+for_window [class="Unity"] floating enable
 
 # awakened poe trade always float
 for_window [class="steam_app_238960"] floating enable
-assign [class="steam_app_238960"] $ws4
 for_window [class="awakened-poe-trade"] floating enable
 for_window [class="poe-overlay"] floating enable
-assign [class="steam_app_306130"] $ws4
 # Always float windows with title 'clipqr'.
 # This is for the clipqr.sh script which generates a QR code from clipboard.
 for_window [title="^clipqr$"] floating enable
@@ -326,4 +325,5 @@ assign [class="Steam"] $ws6
 assign [class="Lutris"] $ws6
 for_window [class="Rambox"] move to workspace $ws3
 for_window [class="Spotify"] move to workspace $ws7
-
+assign [class="steam_app_238960"] $ws4
+assign [class="steam_app_306130"] $ws4

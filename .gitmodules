@@ -5,6 +5,18 @@
 [submodule "i3/i3blocks/scripts/i3blocks-markets"]
 	path = i3/i3blocks/scripts/i3blocks-markets
 	url = git@github.com:DWShuo/i3blocks-markets.git
+[submodule ".scripts/statusbar/i3blocks-markets"]
+	path = .scripts/statusbar/i3blocks-markets
+	url = git@github.com:DWShuo/i3blocks-markets.git
 [submodule "voidrice"]
 	path = voidrice
 	url = git@github.com:LukeSmithxyz/voidrice.git
+[submodule "suckless/dwmblocks"]
+	path = suckless/dwmblocks
+	url = git@github.com:ktzee/dwmblocks.git
+[submodule "suckless/dwm"]
+	path = suckless/dwm
+	url = git@github.com:ktzee/dwm.git
+[submodule "suckless/st"]
+	path = suckless/st
+	url = git@github.com:ktzee/st.git
