@@ -11,3 +11,4 @@
 # exec gnome-session 
 # exec /usr/local/bin/dwm
 exec /home/ktz/.scripts/exec-dwm.sh
+# exec xmonad
