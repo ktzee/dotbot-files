@@ -1,6 +1,8 @@
 # Mod Key
 set $mod Mod4
 
+set $TERM alacritty
+
 # Disable scroll wheel
 bindsym button4 nop
 bindsym button5 nop
@@ -14,7 +16,7 @@ font pango:Fira Code 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
+bindsym $mod+Return exec $TERM
 
 # kill focused window
 bindsym $mod+Shift+z kill
@@ -104,7 +106,7 @@ bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5 
+bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+q move container to workspace $wsq
@@ -200,7 +202,7 @@ bar {
 # Custom Keybinds #
 ###################
 # dmenu
-# bindsym $mod+d exec --no-startup-id ~/.scripts/dmenu.sh 
+# bindsym $mod+d exec --no-startup-id ~/.scripts/dmenu.sh
 # bindsym $mod+shift+d exec --no-startup-id i3-dmenu-desktop
 
 # Rofi
@@ -225,16 +227,20 @@ bindsym --release Shift+Print exec "maim -s | tee ~/Pictures/screenshots/$(date 
 # Vim Cheatsheet
 bindsym $mod+F1 exec feh --no-startup-id ~/.config/i3/popups/vi-vim-cheat-sheet.gif
 
+# spotify
+bindsym $mod+m exec "$TERM -e spt"
 
+# nmtui
+bindsym $mod+n exec "$TERM -e nmtui"
 ##################
-# Window Custome #
+# Window Customs #
 ##################
 
 # disable titlebars
 for_window [class="^.*"] border pixel 2
 
 # gaps
-gaps inner 6 
+gaps inner 6
 gaps outer 3
 
 # images always float
@@ -249,6 +255,8 @@ for_window [class="poe-overlay"] floating enable
 # This is for the clipqr.sh script which generates a QR code from clipboard.
 for_window [title="^clipqr$"] floating enable
 for_window [title="^pinentry"] floating enable
+# Always float nmtui
+for_window [title="nmtui"] floating enable
 
 ################
 # Custom Execs #
@@ -256,39 +264,39 @@ for_window [title="^pinentry"] floating enable
 # NEW: Moved to ~/.xprofile
 # # geoclue
 # exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
-# 
+#
 # # blueman
 # exec --no-startup-id blueman-applet
 # # nm-applet
 # exec --no-startup-id nm-applet
-# 
+#
 # # picom
 # exec --no-startup-id picom --config ~/.config/picom/picom.conf
-# 
+#
 # # dunst
 # exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
-# 
+#
 # # redshift
 # exec --no-startup-id redshift-qt
-# 
+#
 # # polkit-dumb-agent
 # exec --no-startup-id polkit-dumb-agent
-# 
+#
 # # xrandr script
 # exec --no-startup-id .scripts/setdisplay.sh
-# 
-# # start syncthing 
+#
+# # start syncthing
 # exec --no-startup-id syncthing
-# 
+#
 # # set wallpaper
 # exec feh --bg-scale $HOME/Pictures/wallpapers/abstract/colors.jpg
-# 
+#
 # # Xresources
 # exec --no-startup-id xrdb -load ~/.Xresources
-# 
+#
 # # set color scheme
 # # exec wal -Rst
-# 
+#
 # # disable pointers accel
 # exec_always for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done
 
@@ -323,6 +331,7 @@ assign [class="Hexchat"] $ws3
 assign [class="Ferdi"] $ws3
 assign [class="Steam"] $ws6
 assign [class="Lutris"] $ws6
+assign [title="spt"] $ws7
 for_window [class="Rambox"] move to workspace $ws3
 for_window [class="Spotify"] move to workspace $ws7
 assign [class="steam_app_238960"] $ws4
