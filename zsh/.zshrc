@@ -109,7 +109,7 @@ bindkey "^e" edit-command-line
 # [ -f "$HOME/.cache/wal/sequences" ] && (/usr/bin/cat ~/.cache/wal/sequences &)
 
 # Load profile
-source /home/ktz/.config/zsh/.zprofile
+source /home/ktz/.profile
 # Load starship if installed
 eval "$(starship init zsh)"
 

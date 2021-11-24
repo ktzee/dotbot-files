@@ -6,9 +6,9 @@ export FZF_CTRL_T_OPTS="--select-1 --exit-0 --preview '(highlight -O ansi -l {} 
 export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always --line-range :500 {}"'
 export FZF_ALT_C_OPTS='--select-1 --exit-0'
 
-export TERM=alacritty
-export LESSHISTFILE="~/.cache/.lesshst"
+export LESSHISTFILE="$HOME/.cache/.lesshst"
 export READER="zathura"
-export TERMINAL="st"
+export TERMINAL="alacritty"
+export TERM="alacritty"
 export GOPATH=$HOME/go
-export PATH=$PATH:$HOME/AppImage:$HOME/.scripts/:$HOME/.config/nvim/plugged/vim-live-latex-preview/bin:$GOPATH/bin:$HOME/.java/graalvm/bin:$HOME/.java/bin/:$HOME/.local/bin:/home/ktz/.cargo/bin:$HOME/bin:$HOME/.scripts/statusbar/
+export PATH="${PATH}:$HOME/AppImage:$HOME/.scripts/:$HOME/.config/nvim/plugged/vim-live-latex-preview/bin:$GOPATH/bin:$HOME/.java/graalvm/bin:$HOME/.java/bin/:$HOME/.local/bin:/home/ktz/.cargo/bin:$HOME/bin:$HOME/.scripts/statusbar/"

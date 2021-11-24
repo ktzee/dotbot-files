@@ -111,7 +111,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: FiraCode NF 
+    family: FiraCode NF
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -122,7 +122,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: FiraCode NF 
+    family: FiraCode NF
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -133,7 +133,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: FiraCode NF 
+    family: FiraCode NF
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -201,7 +201,7 @@ bell:
   duration: 100
 
   # Visual bell animation color.
-  color: '#ffffff'
+  color: '#ffffee'
 
   # Bell Command
   #
@@ -220,7 +220,7 @@ bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.9
+background_opacity: 0.95
 
 #selection:
   # This string contains all characters that are used as separators for
@@ -673,7 +673,7 @@ cursor:
 
   #debug:
   # Display the time it takes to redraw each frame.
-  #render_timer: true 
+  #render_timer: true
 
   # Keep the log file after quitting Alacritty.
   #persistent_logging: false
@@ -692,30 +692,31 @@ cursor:
   # Print all received window events.
   #print_events: true
   #
+# Colors (Blood Moon)
 colors:
   # Default colors
   primary:
-    background: '0x151515'
-    foreground: '0xd0d0d0'
+    background: '0x10100E'
+    foreground: '0xC6C6C4'
 
   # Normal colors
   normal:
-    black:   '0x151515'
-    red:     '0xfb9fb1'
-    green:   '0xacc267'
-    yellow:  '0xddb26f'
-    blue:    '0x6fc2ef'
-    magenta: '0xe1a3ee'
-    cyan:    '0x12cfc0'
-    white:   '0xd0d0d0'
+    black:   '0x10100E'
+    red:     '0xC40233'
+    green:   '0x009F6B'
+    yellow:  '0xFFD700'
+    blue:    '0x0087BD'
+    magenta: '0x9A4EAE'
+    cyan:    '0x20B2AA'
+    white:   '0xC6C6C4'
 
   # Bright colors
   bright:
-    black:   '0x505050'
-    red:     '0xfb9fb1'
-    green:   '0xacc267'
-    yellow:  '0xddb26f'
-    blue:    '0x6fc2ef'
-    magenta: '0xe1a3ee'
-    cyan:    '0x12cfc0'
-    white:   '0xf5f5f5'
+    black:   '0x696969'
+    red:     '0xFF2400'
+    green:   '0x03C03C'
+    yellow:  '0xFDFF00'
+    blue:    '0x007FFF'
+    magenta: '0xFF1493'
+    cyan:    '0x00CCCC'
+    white:   '0xFFFAFA'

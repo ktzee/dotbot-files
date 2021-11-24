@@ -1,4 +1,4 @@
-xrdb -load $HOME/.Xresources &
+xrdb $HOME/.Xresources & xrdbpid=$!
 /usr/lib/geoclue-2.0/demos/agent &
 blueman-applet &
 nm-applet &
@@ -7,6 +7,9 @@ dunst -config ~/.config/dunst/dunstrc &
 redshift-qt &
 polkit-dumb-agent &
 $HOME/.scripts/setdisplay.sh &
-syncthing &
-feh --bg-scale $HOME/Pictures/wallpapers/abstract/colors.jpg &
+syncthing > $HOME/.local/log/syncthing &
+feh --bg-scale $HOME/Pictures/wallpapers/current &
 for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done &
+
+# Ensure that xrdb has finished running before moving on to start the WM/DE.
+[ -n "$xrdbpid" ] && wait "$xrdbpid"
