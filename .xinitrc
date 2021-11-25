@@ -4,9 +4,9 @@
 [ -f /etc/xprofile ] &&  . /etc/xprofile
 [ -f /home/ktz/.xprofile ] && . /home/ktz/.xprofile
 
-# exec i3
+exec i3
 # exec cinnamon-session
-exec xfce4-session
+# exec xfce4-session
 # exec startplasma-x11
 # exec gnome-session
 # exec /usr/local/bin/dwm
