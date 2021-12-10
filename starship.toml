@@ -1,10 +1,10 @@
-add_newline = false 
+add_newline = false
 
 format = """$git_branch $git_status $git_state $git_commit
 $cmd_duration$python$username$hostname$directory$character"""
 
 [cmd_duration]
-min_time = 500 
+min_time = 500
 format = "[($duration )](bold yellow)"
 [python]
 style = 'bold green'
@@ -25,13 +25,13 @@ show_always = true
 
 [hostname]
 ssh_only = false
-format =  "[@](bold yellow)[$hostname](bold #DC322F) "
+format =  "[@](bold yellow)[$hostname](bold red) "
 disabled = false
 
 [git_branch]
 symbol = "שׂ "
 format = "[($symbol$remote_name$remote_branch$branch )](bold purple)"
-truncation_length = 6 
+truncation_length = 6
 truncation_symbol = ""
 
 [git_commit]
@@ -52,4 +52,3 @@ tag_symbol = "🏷 "
 # deleted	"✘"	The format of deleted
 # style	"bold red"	The style for the module.
 # disabled	false	Disables the git_status module.
-
