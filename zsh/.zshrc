@@ -118,3 +118,6 @@ eval "$(starship init zsh)"
 
 # Load zsh-syntax-highlighting; should be last. Needs to be installed (zsh-syntax-highlighting AUR)
 [ -f "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
+# theme.sh https://github.com/lemnos/theme.sh
+theme.sh hemisu-dark

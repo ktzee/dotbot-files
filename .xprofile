@@ -2,8 +2,8 @@ xrdb $HOME/.Xresources & xrdbpid=$!
 /usr/lib/geoclue-2.0/demos/agent &
 blueman-applet &
 nm-applet &
-picom --config ~/.config/picom/picom.conf &
-dunst -config ~/.config/dunst/dunstrc &
+picom --config $HOME/.config/picom/picom.conf &
+dunst -config $HOME/.config/dunst/dunstrc &
 redshift-qt &
 polkit-dumb-agent &
 $HOME/.scripts/setdisplay.sh &
