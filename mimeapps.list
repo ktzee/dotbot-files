@@ -1,0 +1,22 @@
+[Added Associations]
+application/octet-stream=visual-studio-code.desktop;
+application/x-wine-extension-ini=visual-studio-code.desktop;
+image/gif=feh.desktop;gimp.desktop;krita_gif.desktop;pinta.desktop;brave-browser.desktop;chromium.desktop;visual-studio-code.desktop;
+image/jpeg=feh.desktop;krita_jpeg.desktop;mupdf.desktop;gimp.desktop;pinta.desktop;brave-browser.desktop;chromium.desktop;visual-studio-code.desktop;
+image/png=chromium.desktop;mupdf.desktop;brave-browser.desktop;krita_png.desktop;pinta.desktop;feh.desktop;gimp.desktop;visual-studio-code.desktop;org.photoqt.photoqt.desktop;
+inode/directory=thunar.desktop;
+text/html=brave-browser.desktop;
+text/plain=visual-studio-code.desktop;
+text/x-matlab=visual-studio-code.desktop;
+video/mp4=vlc.desktop;
+video/x-matroska=vlc.desktop;
+application/zip=org.gnome.Nautilus.desktop;
+
+[Default Applications]
+text/html=brave-browser.desktop;
+video/mp4=vlc.desktop;
+video/x-matroska=vlc.desktop;
+x-scheme-handler/discord-378483863044882443=discord-378483863044882443.desktop;
+x-scheme-handler/discord-402572971681644545=discord-402572971681644545.desktop
+x-scheme-handler/exilence=ExilenceNext.desktop;
+image/png=org.photoqt.photoqt.desktop
