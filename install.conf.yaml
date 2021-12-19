@@ -16,6 +16,7 @@
     ~/.config/spotifyd: spotifyd
     ~/.tmux.conf: .tmux.conf
     ~/.tmux.conf.local: .tmux.conf.local
+    ~/.local/bin: bin
     ~/.config/starship.toml: starship.toml
     ~/.config/aliasrc: aliasrc
     ~/.config/rofi: rofi

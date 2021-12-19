@@ -4,11 +4,12 @@
 [ -f /etc/xprofile ] && . /etc/xprofile
 [ -f ~/.xprofile ] && . ~/.xprofile
 
+# exec dwm
 exec i3
 # exec cinnamon-session
 # exec xfce4-session
-#while true; do
+# while true; do
 #	/usr/local/bin/dwm 2> /dev/null
-#done
-# exec startplasma-x11 
-# exec gnome-session 
+# done
+# exec startplasma-x11
+# exec gnome-session

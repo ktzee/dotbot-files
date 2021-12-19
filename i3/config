@@ -218,13 +218,13 @@ bar {
 
 # Rofi
 bindsym $mod+d exec rofi -show combi
-# bindsym $mod+shift+d exec rofi -show drun
+bindsym $mod+shift+d exec dmenu_run
 
 # rofi-pass
 bindsym $mod+grave exec rofi-pass
 
 # Lock screen
-bindsym	$mod+Ctrl+l exec slock
+bindsym	$mod+Ctrl+l exec /usr/bin
 
 # Desktop screenshot
 #bindsym --release Print exec "scrot ~/Pictures/scrot/$(date --iso-8601='seconds').png -m -e 'xclip -selection c -t image/png < $f'"

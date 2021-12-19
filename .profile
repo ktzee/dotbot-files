@@ -6,4 +6,4 @@ export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always --line-ra
 export LESSHISTFILE="~/.cache/.lesshst"
 export READER="zathura"
 export GOPATH=$HOME/go
-export PATH=$PATH:$HOME/AppImage:$HOME/.scripts/:$HOME/.config/nvim/plugged/vim-live-latex-preview/bin:$GOPATH/bin:$HOME/.java/graalvm/bin:$HOME/.java/bin/:$HOME/.local/bin:/home/ktz/.cargo/bin:$HOME/bin
+export PATH="$PATH:$HOME/AppImage:$HOME/.scripts/:$HOME/.config/nvim/plugged/vim-live-latex-preview/bin:$GOPATH/bin:$HOME/.java/graalvm/bin:$HOME/.java/bin/:$HOME/home/ktz/.cargo/bin:${$(find ~/.local/bin -type d -printf %p:)%%:}"
