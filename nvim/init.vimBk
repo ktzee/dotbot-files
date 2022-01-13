@@ -1,0 +1,148 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" PLUGIN CONFIGURATIONS
+" Nerd Tree
+	map <leader>n :NERDTreeToggle<CR>
+	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    	if has('nvim')
+		let NERDTreeBookmarksFile = stdpath('data') . '/NERDTreeBookmarks'
+    	else
+		let NERDTreeBookmarksFile = '~/.vim' . '/NERDTreeBookmarks'
+    	endif
+
+" hexokinase
+let g:Hexokinase_highlighters = [ 'backgroundfull' ]
+let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla,colour_names'
+
+" syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+"
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" ale
+" set completeopt=menu,menuone,preview,noselect,noinsert
+" let g:ale_completion_enabled = 1
+"" Ctrl+LeftClick Go to Definition
+" nnoremap <C-LeftMouse> :ALEGoToDefinition<CR>
+"" Rustfmt
+" let g:ale_fixers = { 'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines'] }
+"" Linter (rust-analyzer)
+" let g:ale_linters = {
+" \  'rust': ['analyzer'],
+" \}
+" rustvim
+let g:rustfmt_autosave = 1
+
+" racer
+" set hidden
+" let g:racer_experimental_completer = 1
+" let g:racer_insert_paren = 1
+
+" FZF
+fun! s:openFileAtLocation(result)
+  if len(a:result) == 0
+    return
+  endif
+  let filePos = split(a:result, ':')
+  exec 'edit +' . l:filePos[1] . ' ' . l:filePos[0]
+endfun
+
+nnoremap <silent> <C-p> :call fzf#run(fzf#wrap({
+  \ 'source': 'rg --line-number ''.*''',
+  \ 'options': '--delimiter : --preview "bat --style=plain --color=always {1} -H {2}" --preview-window "+{2}/2"',
+  \ 'sink': function('<sid>openFileAtLocation'),
+  \ }))<CR>
+
+call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+" Plug 'racer-rust/vim-racer'
+" Plug 'dense-analysis/ale'
+Plug 'rust-lang/rust.vim'
+" Plug 'vim-syntastic/syntastic'
+Plug 'cespare/vim-toml'
+Plug 'preservim/tagbar'
+Plug 'dguo/blood-moon', {'rtp': 'applications/vim'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'simrat39/rust-tools.nvim'
+Plug 'jiangmiao/auto-pairs'
+call plug#end()
+
+let mapleader = ","
+set nu
+
+if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
+	echo "Downloading junegunn/vim-plug to manage plugins..."
+	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
+	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
+	autocmd VimEnter * PlugInstall
+endif
+
+set title
+set bg=light
+set mouse=a
+set clipboard+=unnamedplus
+set noshowmode
+set noruler
+set laststatus=0
+set noshowcmd
+" set notermguicolors
+colorscheme default "blood-moon
+highlight Search ctermfg=0
+
+" Basics:
+	nnoremap c "_c"
+	set nocompatible
+	filetype plugin on
+	syntax on
+	set encoding=utf-8
+	set number relativenumber
+	filetype plugin indent on
+" Filetypes
+	autocmd BufNewFile,BufRead *.rs set filetype=rust
+" Autocompletion
+	set wildmode=longest,list,full
+" Auto comment on new line
+	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" Dot commands over visual blocks
+	vnoremap . :normal .<CR>
+" Spell check set to <leader>o (ortography)
+	map <leader>o :setlocal spell! spelllang=en_us<CR>
+" Splits open at the bottom and right
+	set splitbelow splitright
+
+" Shortcutting split navigation, saving a keypress:
+	map <C-h> <C-w>h
+	map <C-j> <C-w>j
+	map <C-k> <C-w>k
+	map <C-l> <C-w>l
+
+" Replace ex mode with gq
+	map Q gq
+
+" Replace all is aliased to S.
+	nnoremap S :%s//g<Left><Left>
+
+" Save file as sudo on files that require root permission
+	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+" Automatically deletes all trailing whitespace and newlines at end of file on save.
+	autocmd BufWritePre * %s/\s\+$//e
+	autocmd BufWritePre * %s/\n\+\%$//e
+	autocmd BufWritePre *.[ch] %s/\%$/\r/e
+
+
+" AUTOMATIONS
+" Recompile dwmblocks on config edit.
+autocmd BufWritePost ~/git/dotbot-files/suckless/dwmblocks/config.h !cd ~/git/dotbot-files/suckless/dwmblocks/.h; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }
