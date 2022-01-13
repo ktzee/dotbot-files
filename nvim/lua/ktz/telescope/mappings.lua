@@ -4,13 +4,13 @@ local key_map = vim.api.nvim_set_keymap
 key_map("n", "<leader>st", ":lua require'ktz.telescope'.search_todos()<CR>", { noremap = true, silent = true })
 
 -- search Brave bookmarks & go
-key_map(
-  "n",
-  "<space>b",
-  [[<Cmd>lua require('telescope').extensions.bookmarks.bookmarks()<CR>]],
-  { noremap = true, silent = true }
-)
-
+-- key_map(
+--   "n",
+--   "<space>b",
+--   [[<Cmd>lua require('telescope').extensions.bookmarks.bookmarks()<CR>]],
+--   { noremap = true, silent = true }
+-- )
+--
 -- open zoxide list
 key_map(
   "n",

@@ -24,5 +24,6 @@
     ~/.config/i3: i3
     ~/.config/picom: picom
     ~/.config/nvim: nvim
+    ~/.config/lvim: lvim
     ~/.config/dunst: dunst
     ~/.config/zsh: zsh

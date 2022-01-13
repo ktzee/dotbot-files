@@ -1,5 +1,8 @@
 nvim/plugged/*
 nvim/.netrwhist
+nvim/undodir/
+nvim/plugin/
+lvim/plugin/
 zsh/.zcompdump
 zsh/_deno
 zsh/.zsh_history
