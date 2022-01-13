@@ -6,7 +6,7 @@ picom --config $HOME/.config/picom/picom.conf &
 dunst -config $HOME/.config/dunst/dunstrc &
 redshift-qt &
 polkit-dumb-agent &
-$HOME/.scripts/setdisplay.sh &
+# $HOME/.scripts/setdisplay.sh &
 syncthing > $HOME/.local/log/syncthing &
 feh --bg-scale $HOME/Pictures/wallpapers/current &
 for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done &
