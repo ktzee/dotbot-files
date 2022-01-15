@@ -1,14 +1,22 @@
--- config
-require "ktz.config"
+vim.cmd [[
+ autocmd!
+       autocmd BufWritePost init.lua source <afile>
+ augroup end
+]]
+-- neovide
+require "ktz.neovide"
 
--- Plugins
-require "ktz.plugins"
-
--- Settings
-require "ktz.settings"
-
--- Mappings (telescope mappings in telescope/mappings.lua)
+-- mappings
 require "ktz.mappings"
 
--- Telescope 🔭
+-- plugins
+require "ktz.plugins"
+
+-- settings
+require "ktz.settings"
+
+-- telescope
 require "ktz.telescope"
+
+-- plugin configs
+require "ktz.plugins.config"

@@ -17,6 +17,7 @@ lvim.colorscheme = "onedarker"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.normal_mode["<F2>"] = "<Cmd>RustHoverActions<CR>"
 lvim.keys.normal_mode["<C-p>"] = "<Cmd>Telescope find_files<CR>"
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
@@ -139,6 +140,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.lsp.override = { "rust" }
 -- Additional Plugins
 lvim.plugins = {
+    {'nvim-telescope/telescope-ui-select.nvim' },
     {"folke/tokyonight.nvim"},
     {
       "folke/trouble.nvim",
@@ -157,22 +159,13 @@ lvim.plugins = {
           },
           server = {
             cmd = { vim.fn.stdpath "data" .. "/lsp_servers/rust/rust-analyzer" },
+            -- cmd = { "rust-analyzer" },
             on_attach = require("lvim.lsp").common_on_attach,
             on_init = require("lvim.lsp").common_on_init,
           },
           })
       end,
       ft = { "rust", "rs" },
-    },
-    {
-      'wfxr/minimap.vim',
-      run = "cargo install --locked code-minimap",
-      -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
-      config = function ()
-        vim.cmd ("let g:minimap_width = 10")
-        vim.cmd ("let g:minimap_auto_start = 1")
-        vim.cmd ("let g:minimap_auto_start_win_enter = 1")
-      end,
     },
     {
       "andymass/vim-matchup",
@@ -200,6 +193,16 @@ lvim.plugins = {
           vim.api.nvim_command("autocmd InsertLeave * let b:cursorword = 1")
           vim.api.nvim_command("augroup END")
           end
+    },
+    {
+      'wfxr/minimap.vim',
+      run = "cargo install --locked code-minimap",
+      -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
+      config = function ()
+        vim.cmd ("let g:minimap_width = 10")
+        vim.cmd ("let g:minimap_auto_start = 1")
+        vim.cmd ("let g:minimap_auto_start_win_enter = 1")
+      end,
     },
 }
 

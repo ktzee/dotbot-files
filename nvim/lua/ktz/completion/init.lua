@@ -38,7 +38,19 @@ lspkind.init {
   },
 }
 
--- @TODOUA: Try cmdline again soon, lots of updates since last tried
+-- cmp-cmdline
+require'cmp'.setup.cmdline(':', {
+  sources = {
+    { name = 'cmdline' }
+  }
+})
+
+require'cmp'.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
 cmp.setup {
   snippet = {
     expand = function(args)

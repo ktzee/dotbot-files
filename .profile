@@ -11,6 +11,7 @@ export LESSHISTFILE="$HOME/.cache/.lesshst"
 export READER="zathura"
 export TERMINAL="alacritty"
 export TERM="alacritty"
+export BROWSER="brave"
 export GOPATH=$HOME/go
 
 # PATH
