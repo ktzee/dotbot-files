@@ -12,6 +12,7 @@ export READER="zathura"
 export TERMINAL="alacritty"
 export TERM="alacritty"
 export BROWSER="brave"
+export EDITOR="nvim"
 export GOPATH=$HOME/go
 
 # PATH

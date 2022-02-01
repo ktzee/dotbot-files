@@ -24,10 +24,10 @@ return require('packer').startup(function()
 	use "andymass/vim-matchup"
 	use "tpope/vim-fugitive"
 	use 'numToStr/Comment.nvim'
-	use "akinsho/toggleterm.nvim"
+	--use "akinsho/toggleterm.nvim"
 	use "windwp/nvim-autopairs"
 	use "lukas-reineke/indent-blankline.nvim"
-	use "chrisbra/Colorizer"
+	use "norcalli/nvim-colorizer.lua"
 	use {
     'kyazdani42/nvim-tree.lua',
     requires = {
@@ -35,6 +35,9 @@ return require('packer').startup(function()
     },
 	}
 	-- Languages and Completion
+	use 'neovim/nvim-lspconfig'
+	use "onsails/lspkind-nvim"
+	use "ray-x/lsp_signature.nvim"
 	use 'sstallion/vim-whitespace'
 	use {
 		"lewis6991/spellsitter.nvim",
@@ -42,45 +45,12 @@ return require('packer').startup(function()
 			require("spellsitter").setup()
 		end,
 	}
-	use 'neovim/nvim-lspconfig'
-	use "onsails/lspkind-nvim"
-	use "ray-x/lsp_signature.nvim"
 	-- markdown plugins
 	use "ellisonleao/glow.nvim"
 	use { "iamcco/markdown-preview.nvim", run = "cd app && yarn install" }
 	-- json pathing
 	use "mogelbrod/vim-jsonpath"
 	-- Completion
-	-- use { 'ms-jpq/coq_nvim', branch='coq' }
-	-- use {'ms-jpq/coq.artifacts', branch='artifacts'}
-	use 'neovim/nvim-lspconfig'
-	-- use 'hrsh7th/cmp-nvim-lsp'
-	-- use 'hrsh7th/cmp-buffer'
-	-- use 'hrsh7th/cmp-path'
- --  use 'saadparwaiz1/cmp_luasnip'
-	-- use 'hrsh7th/cmp-cmdline'
-	-- use 'hrsh7th/nvim-cmp'
-	    -- nvim-cmp
-	use {
-		"hrsh7th/nvim-cmp",
-		requires = {
-			{ "hrsh7th/cmp-buffer" },
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "hrsh7th/cmp-path" },
-			{ "hrsh7th/cmp-nvim-lua" },
-			{ "ray-x/cmp-treesitter" },
-			{ "hrsh7th/nvim-cmp" },
-			{ "hrsh7th/cmp-vsnip" },
-			{ "hrsh7th/vim-vsnip" },
-			{ "Saecki/crates.nvim" },
-			{ "f3fora/cmp-spell" },
-			{ "hrsh7th/cmp-cmdline" },
-			{ "tamago324/cmp-zsh" },
-		},
-		config = function()
-			require "ktz.completion"
-		end,
-	}
   -- Rust
   use "rust-lang/rust.vim"
   use "simrat39/rust-tools.nvim"
@@ -94,5 +64,5 @@ return require('packer').startup(function()
 	-- use Telescope for vim.ui.select
 	use 'nvim-telescope/telescope-ui-select.nvim'
 	-- Treesitter
-	use "nvim-treesitter/nvim-treesitter"
+	use "nvim-treesitter/nvim-treesitter" 
 end)

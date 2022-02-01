@@ -37,3 +37,4 @@ require("telescope").setup {
     buffer_previewer_maker = new_maker,
   }
 }
+require('telescope').load_extension('ui-select')

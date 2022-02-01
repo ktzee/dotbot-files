@@ -257,6 +257,8 @@ for_window [title="^clipqr$"] floating enable
 for_window [title="^pinentry"] floating enable
 # Always float nmtui
 for_window [title="nmtui"] floating enable
+# always float qjackctl
+for_window [class="QjackCtl"] floating enable
 
 ################
 # Custom Execs #

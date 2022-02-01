@@ -30,6 +30,7 @@ vim.cmd [[
 	set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 	set grepformat=%f:%l:%c:%m,%f:%l:%m
 	set dictionary+=/usr/share/dict/words-insane "AUR: words-insane
+	set guifont=FiraCode\ Nerd\ Font\ Mono:12
 ]]
 
 -- Highlight on yank

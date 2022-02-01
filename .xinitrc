@@ -9,7 +9,7 @@ if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/x11/xprofile" ]; then
 else
 	. "$HOME/.xprofile"
 fi
-
+xset r rate 250 40
 exec i3
 # exec cinnamon-session
 # exec xfce4-session

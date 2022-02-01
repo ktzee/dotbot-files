@@ -21,7 +21,7 @@ key_map("n", "<C-j>", "<C-w>j", opts)
 key_map("n", "<C-k>", "<C-w>k", opts)
 key_map("n", "<C-l>", "<C-w>l", opts)
 
--- Naviagate buffers
+-- Navigate buffers
 key_map("n", "<S-l>", ":bnext<CR>", opts)
 key_map("n", "<S-h>", ":bprevious<CR>", opts)
 

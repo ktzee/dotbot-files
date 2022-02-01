@@ -3,10 +3,6 @@ local lspconfig = require "lspconfig"
 require("lspconfig").vimls.setup {}
 -- nvim_lsp object
 local nvim_lsp = require "lspconfig"
--- snippet support
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- `eslint` lang server setup through lspconfig
 -- vscode-langservers-extracted@3.0.2 → https://github.com/hrsh7th/vscode-langservers-extracted
@@ -20,24 +16,6 @@ nvim_lsp.eslint.setup {
     format = { enable = true },
   },
 }
-
--- Enable rust_analyzer
--- rust-analyzer 54782428a 2022-01-12 dev
-nvim_lsp.rust_analyzer.setup {
-  capabilities = capabilities,
-  settings = {
-    ["rust-analyzer"] = {
-      cargo = { loadOutDirsFromCheck = true },
-      procMacro = { enable = true },
-    },
-  },
-}
-
--- rust-tools config: https://github.com/simrat39/rust-tools.nvim
--- You want this if you're a Rust developer.
--- @TODOUA: selects on *abbles require manual close with no select
--- ... not handling nil in select telescope or otherwise
-require("rust-tools").setup {}
 
 -- LSP signs default
 vim.fn.sign_define(
@@ -59,9 +37,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
   update_in_insert = false,
   severity_sort = true,
 })
-
-require("which-key").setup()
-
 
 require'nvim-tree'.setup {
 	auto_close = true,
@@ -128,12 +103,6 @@ require("nvim-autopairs").setup({
 		java = false,
 	},
 })
-require("toggleterm").setup({
-	open_mapping = [[<C-t>]],
-	direction = "float",
-	float_opts = {
-		windblend = 0,
-		border= "curved",
-	}
-})
 require('Comment').setup()
+require('colorizer').setup()
+require("which-key").setup()

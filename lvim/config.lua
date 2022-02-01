@@ -17,8 +17,6 @@ lvim.colorscheme = "onedarker"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.keys.normal_mode["<F2>"] = "<Cmd>RustHoverActions<CR>"
-lvim.keys.normal_mode["<C-p>"] = "<Cmd>Telescope find_files<CR>"
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
 -- edit a default keymapping
@@ -137,10 +135,8 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   },
 -- }
 
-lvim.lsp.override = { "rust" }
 -- Additional Plugins
 lvim.plugins = {
-    {'nvim-telescope/telescope-ui-select.nvim' },
     {"folke/tokyonight.nvim"},
     {
       "folke/trouble.nvim",
@@ -158,51 +154,13 @@ lvim.plugins = {
             },
           },
           server = {
-            cmd = { vim.fn.stdpath "data" .. "/lsp_servers/rust/rust-analyzer" },
-            -- cmd = { "rust-analyzer" },
+            cmd = { "rust-analyzer" },
             on_attach = require("lvim.lsp").common_on_attach,
             on_init = require("lvim.lsp").common_on_init,
           },
           })
       end,
       ft = { "rust", "rs" },
-    },
-    {
-      "andymass/vim-matchup",
-      event = "CursorMoved",
-      config = function()
-        vim.g.matchup_matchparen_offscreen = { method = "popup" }
-      end,
-    },
-    {
-      "folke/todo-comments.nvim",
-      event = "BufRead",
-      config = function()
-        require("todo-comments").setup()
-      end,
-    },
-    {
-      "itchyny/vim-cursorword",
-        event = {"BufEnter", "BufNewFile"},
-        config = function()
-          vim.api.nvim_command("augroup user_plugin_cursorword")
-          vim.api.nvim_command("autocmd!")
-          vim.api.nvim_command("autocmd FileType NvimTree,lspsagafinder,dashboard,vista let b:cursorword = 0")
-          vim.api.nvim_command("autocmd WinEnter * if &diff || &pvw | let b:cursorword = 0 | endif")
-          vim.api.nvim_command("autocmd InsertEnter * let b:cursorword = 0")
-          vim.api.nvim_command("autocmd InsertLeave * let b:cursorword = 1")
-          vim.api.nvim_command("augroup END")
-          end
-    },
-    {
-      'wfxr/minimap.vim',
-      run = "cargo install --locked code-minimap",
-      -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
-      config = function ()
-        vim.cmd ("let g:minimap_width = 10")
-        vim.cmd ("let g:minimap_auto_start = 1")
-        vim.cmd ("let g:minimap_auto_start_win_enter = 1")
-      end,
     },
 }
 
