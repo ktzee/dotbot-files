@@ -1,0 +1,30 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ["~"]
+
+- link:
+    ~/.xinitrc: laptop/.xinitrc
+    ~/.xprofile: .xprofile
+    ~/.zshenv: .zshenv
+    ~/.profile: .profile
+    ~/.gitconfig: .gitconfig
+    ~/.scripts: .scripts
+    ~/.gitconfig: .gitconfig
+    ~/.config/spotifyd: spotifyd
+    ~/.tmux.conf: .tmux.conf
+    ~/.tmux.conf.local: .tmux.conf.local
+    ~/.config/mimeapps.list: mimeapps.list
+    ~/.config/starship.toml: starship.toml
+    ~/.config/aliasrc: aliasrc
+    ~/.config/rofi: rofi
+    ~/.config/redshift: redshift
+    ~/.config/alacritty: laptop/alacritty
+    ~/.config/i3: laptop/i3
+    ~/.config/i3status-rust: laptop/i3status-rust
+    ~/.config/picom: picom
+    ~/.config/nvim: nvim
+    ~/.config/lvim: lvim
+    ~/.config/dunst: dunst
+    ~/.config/zsh: zsh
