@@ -182,7 +182,8 @@ client.background $black
 
 # i3bar
 bar {
-	status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
+	# status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
+	status_command i3status-rs ~/.config/i3status-rust/config.toml
 	position top
 	strip_workspace_numbers yes
 	tray_output primary
@@ -206,7 +207,7 @@ bar {
 # bindsym $mod+shift+d exec --no-startup-id i3-dmenu-desktop
 
 # Rofi
-bindsym $mod+d exec rofi -show combi
+bindsym $mod+d exec --no-startup-id rofi -show combi -run-shell-command '{terminal} -e zsh -ic "{cmd} && read"'
 # bindsym $mod+shift+d exec rofi -show drun
 
 # rofi-pass

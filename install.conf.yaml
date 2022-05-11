@@ -22,6 +22,7 @@
     ~/.config/redshift: redshift
     ~/.config/alacritty: alacritty
     ~/.config/i3: i3
+    ~/.config/i3status-rust: i3status-rust
     ~/.config/picom: picom
     ~/.config/nvim: nvim
     ~/.config/lvim: lvim
