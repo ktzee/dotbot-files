@@ -28,3 +28,4 @@
     ~/.config/lvim: lvim
     ~/.config/dunst: dunst
     ~/.config/zsh: zsh
+    ~/.Xresources: laptop/.Xresources
