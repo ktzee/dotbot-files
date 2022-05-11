@@ -22,7 +22,6 @@ set.inccommand = "split"
 set.incsearch = true
 set.pumblend = 5
 vim.cmd [[ 
-	colorscheme tokyonight
 	set clipboard=unnamedplus
 	" syntax highlight only to 1K instead of default 3K
 	set synmaxcol=1000

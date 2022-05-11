@@ -3,6 +3,7 @@ nvim/.netrwhist
 nvim/undodir/
 nvim/plugin/
 lvim/plugin/
+nvim/plugin/packer_compiled.lua
 zsh/.zcompdump
 zsh/_deno
 zsh/.zsh_history

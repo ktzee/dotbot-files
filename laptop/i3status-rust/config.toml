@@ -15,13 +15,6 @@ interval = 1
 format = "{barchart} {utilization} {frequency}"
 
 [[block]]
-block = "nvidia_gpu"
-label = "RTX3070"
-show_memory = false
-show_clocks = true
-interval = 1
-
-[[block]]
 block = "temperature"
 collapsed = false
 interval = 10
@@ -33,6 +26,7 @@ inputs = ["CPUTIN", "SYSIN"]
 block = "sound"
 device_kind = "source"
 driver = "pulseaudio"
+
 [[block]]
 block = "sound"
 driver = "pulseaudio"
