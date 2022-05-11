@@ -27,7 +27,7 @@ font pango:Fura Code Nerd Font 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+z kill
@@ -193,7 +193,7 @@ client.background $black
 
 # i3bar
 bar {
-	status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
+	status_command i3status-rs ~/.config/i3status-rust/config.toml
 	position top
 	strip_workspace_numbers yes
 	tray_output primary
