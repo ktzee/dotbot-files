@@ -32,4 +32,4 @@ fi
 
 # "c" is "last trade closed"
 # https://docs.kraken.com/rest/#operation/getTickerInformation
-printf "%.2f\n" "$(echo "$result" | jq -r ".[\"result\"][\"$pair\"][\"c\"][0]")"
+printf " %.2f\n" "$(echo "$result" | jq -r ".[\"result\"][\"$pair\"][\"c\"][0]")"

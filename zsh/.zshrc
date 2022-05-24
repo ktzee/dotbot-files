@@ -36,6 +36,9 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
+# Last Word with Alt+.
+bindkey '\e.' insert-last-word
+
 # Arrow keys
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
@@ -110,8 +113,9 @@ bindkey "^e" edit-command-line
 
 # Load profile
 source /home/ktz/.profile
-# Load starship if installed
-# eval "$(starship init zsh)"
+# Load zsh-pure-prompt if installed
+autoload -U promptinit; promptinit
+prompt pure
 
 # Load zsh-autosuggestions if installed
 [ -f "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
