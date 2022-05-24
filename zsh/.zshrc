@@ -111,7 +111,7 @@ bindkey "^e" edit-command-line
 # Load profile
 source /home/ktz/.profile
 # Load starship if installed
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # Load zsh-autosuggestions if installed
 [ -f "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

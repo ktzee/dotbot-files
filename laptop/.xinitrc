@@ -10,6 +10,7 @@ else
 	. "$HOME/.xprofile"
 fi
 xset r rate 250 40
+xinput set-prop 'TPPS/2 Elan TrackPoint' 'libinput Accel Speed' 1
 exec i3
 # exec cinnamon-session
 # exec xfce4-session
