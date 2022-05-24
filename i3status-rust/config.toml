@@ -6,6 +6,11 @@ show_marks = "visible"
 
 [[block]]
 block = "custom"
+command = ''' ~/.scripts/statusbar/kraken-ticker '''
+interval = 120
+
+[[block]]
+block = "custom"
 command = ''' ~/.scripts/statusbar/poeninja '''
 interval = 120
 
@@ -33,6 +38,7 @@ inputs = ["CPUTIN", "SYSIN"]
 block = "sound"
 device_kind = "source"
 driver = "pulseaudio"
+
 [[block]]
 block = "sound"
 driver = "pulseaudio"

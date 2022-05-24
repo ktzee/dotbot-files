@@ -249,9 +249,8 @@ for_window [class="feh"] floating enable
 for_window [class="Unity"] floating enable
 
 # awakened poe trade always float
-for_window [class="steam_app_238960"] floating enable
+# for_window [class="steam_app_238960"] floating enable
 for_window [class="awakened-poe-trade"] floating enable
-for_window [class="poe-overlay"] floating enable
 # Always float windows with title 'clipqr'.
 # This is for the clipqr.sh script which generates a QR code from clipboard.
 for_window [title="^clipqr$"] floating enable
@@ -325,7 +324,7 @@ workspace $wse output $secondMonitor
 
 # assign application to workspace
 assign [class="firefoxdeveloperedition"] $wsq
-assign [class="firefox"] $ws2
+assign [class="firefox"] $wsq
 assign [class="Chromium"] $ws2
 assign [class="Brave-browser"] $wsq
 assign [class="Signal"] $ws3
