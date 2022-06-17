@@ -29,10 +29,10 @@ return require('packer').startup(function()
 	use "lukas-reineke/indent-blankline.nvim"
 	use "norcalli/nvim-colorizer.lua"
 	use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    },
+	    'kyazdani42/nvim-tree.lua',
+	    requires = {
+	      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+	    }
 	}
 	-- Languages and Completion
 	use 'neovim/nvim-lspconfig'
