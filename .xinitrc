@@ -18,3 +18,5 @@ exec i3
 # exec /usr/local/bin/dwm
 # exec /home/ktz/.scripts/exec-dwm.sh
 # dbus-launch leftwm
+# exec qtile start
+# exec awesome

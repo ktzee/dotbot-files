@@ -11,12 +11,3 @@
 [submodule "voidrice"]
 	path = voidrice
 	url = git@github.com:LukeSmithxyz/voidrice.git
-[submodule "suckless/dwmblocks"]
-	path = suckless/dwmblocks
-	url = git@github.com:ktzee/dwmblocks.git
-[submodule "suckless/dwm"]
-	path = suckless/dwm
-	url = git@github.com:ktzee/dwm.git
-[submodule "suckless/st"]
-	path = suckless/st
-	url = git@github.com:ktzee/st.git

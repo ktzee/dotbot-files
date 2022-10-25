@@ -1,5 +1,5 @@
 #!/usr/bin/bash
 
-# exalted orb
-LEAGUE=Sentinel
-curl -s -X GET "https://poe.ninja/api/data/CurrencyHistory?league=${LEAGUE}&type=Currency&currencyId=2" | jq ."receiveCurrencyGraphData[-1].value" | cut -b 1-3
+# divine orb
+LEAGUE=Kalandra
+curl -s -X GET "https://poe.ninja/api/data/CurrencyHistory?league=${LEAGUE}&type=Currency&currencyId=3" | jq ."receiveCurrencyGraphData[-1].value | floor"

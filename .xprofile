@@ -1,5 +1,6 @@
 xrdb $HOME/.Xresources & xrdbpid=$!
 /usr/lib/geoclue-2.0/demos/agent &
+xiccd &
 blueman-applet &
 nm-applet &
 picom --config $HOME/.config/picom/picom.conf &
