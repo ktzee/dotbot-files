@@ -233,7 +233,11 @@ bindsym $mod+F1 exec feh --no-startup-id ~/.config/i3/popups/vi-vim-cheat-sheet.
 bindsym $mod+m exec "$TERM -e spt"
 
 # nmtui
-bindsym $mod+n exec "$TERM -e nmtui"
+# bindsym $mod+n exec "$TERM -e nmtui"
+
+# notification
+bindsym $mod+n exec dunstctl close-all
+bindsym $mod+Shift+n exec dunstctl history-pop
 ##################
 # Window Customs #
 ##################
@@ -293,7 +297,7 @@ for_window [class="QjackCtl"] floating enable
 # exec --no-startup-id picom --config ~/.config/picom/picom.conf
 #
 # # dunst
-# exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
+exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 #
 # # redshift
 # exec --no-startup-id redshift-qt
@@ -346,6 +350,7 @@ assign [class="Chromium"] $ws2
 assign [class="Brave-browser"] $wsq
 assign [class="Signal"] $ws3
 assign [class="discord"] $ws3
+assign [class="WebCord"] $ws3
 assign [class="Hexchat"] $ws3
 assign [class="Ferdi"] $ws3
 assign [class="Steam"] $ws6
