@@ -235,6 +235,12 @@ bindsym $mod+m exec "$TERM -e spt"
 # nmtui
 # bindsym $mod+n exec "$TERM -e nmtui"
 
+# OCR - image text to clipboard
+bindsym $mod+i exec maim -s | tesseract stdin stdout -l eng \ | xclip -in -selection clipboard
+
+# poe sanctum rooms
+bindsym $mod+p exec cat /home/ktz/Documents/Path\ of\ Exile/sanctum_rooms | dmenu -i -markup-rows
+
 # notification
 bindsym $mod+n exec dunstctl close-all
 bindsym $mod+Shift+n exec dunstctl history-pop
@@ -258,6 +264,9 @@ for_window [class="feh"] floating enable
 
 # unity floats
 for_window [class="Unity"] floating enable
+
+# steam floats
+for_window [class="steam"] floating enable
 
 #steamtinkerlaunch floats
 for_window [class="Yad"] floating enable

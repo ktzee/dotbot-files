@@ -1,11 +1,15 @@
-icons= "material-nf"
+icons_format = "{icon}"
+
+[icons]
+icons = "material-nf"
 
 [[block]]
 block = "custom"
-command = ''' ~/.scripts/lights/strip_status'''
-on_click = "~/.scripts/lights/strip_toggle"
-interval = "once"
-signal = 4
+cycle = ["echo OFF", "echo ON"]
+interval = 1
+[[block.click]]
+button = "left"
+cmd = "~/.scripts/lights/strip_toggle"
 
 [[block]]
 block = "custom"
@@ -20,22 +24,20 @@ interval = 120
 [[block]]
 block = "cpu"
 interval = 1
-format = "{barchart} {utilization} {frequency}"
+format = " $icon $barchart $utilization "
+format_alt = " $icon $frequency{ $boost|} "
 
 [[block]]
 block = "nvidia_gpu"
-label = "RTX3070"
-show_memory = false
-show_clocks = true
-interval = 1
+format = " $icon RTX3070 $utilization $temperature $clocks "
+
 
 [[block]]
 block = "temperature"
-collapsed = false
-interval = 10
-chip = "*-isa-*"
-format = "{max} max, {average} avg"
-inputs = ["CPUTIN", "SYSIN"]
+scale = "celsius"
+format = " $icon $min min, $max max, $average avg "
+interval = 5
+chip = "coretemp-isa-*"
 
 [[block]]
 block = "sound"
@@ -45,7 +47,7 @@ driver = "pulseaudio"
 [[block]]
 block = "sound"
 driver = "pulseaudio"
-format = "{output_description} {volume}"
+format = "$icon $output_description $volume"
 
 [[block]]
 block = "time"
