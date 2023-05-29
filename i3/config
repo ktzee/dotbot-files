@@ -3,6 +3,9 @@ set $mod Mod4
 
 set $TERM alacritty
 
+# Stop mouse warping 
+mouse_warping none
+
 # Disable scroll wheel
 bindsym button4 nop
 bindsym button5 nop
@@ -28,11 +31,12 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
+bindsym $mod+Left workspace prev
+# bindsym $mod+Down focus down
+# bindsym $mod+Up focus up
+bindsym $mod+Right workspace next
+bindsym $mod+d workspace next
+bindsym $mod+Shift+d workspace prev
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
@@ -45,6 +49,10 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# switch to workspace left/right
+bindsym $mod+Tab focus left
+bindsym $mod+Shift+Tab workspace prev
+
 # split in horizontal orientation
 #bindsym $mod+h split h
 
@@ -55,16 +63,16 @@ bindsym $mod+v split toggle
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-# cycle throuth layouts
-bindsym $mod+t layout toggle
+# cycle trough layouts
+bindsym $mod+t layout toggle tabbed splith
 # Toggle h/v split layout
-bindsym $mod+s layout toggle split
+# bindsym $mod+s layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+f floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 # bindsym $mod+a focus parent
@@ -85,18 +93,15 @@ set $wsq "8 Browser 爵"
 set $wsw "9 "
 set $wse "10 "
 
-# switch to workspace left/right
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
 
 # switch to specific workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
+bindsym $mod+a workspace $ws5
+bindsym $mod+s workspace $ws6
+bindsym $mod+m workspace $ws7
 bindsym $mod+q workspace $wsq
 bindsym $mod+w workspace $wsw
 bindsym $mod+e workspace $wse
@@ -106,9 +111,9 @@ bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+a move container to workspace $ws5
+bindsym $mod+Shift+s move container to workspace $ws6
+bindsym $mod+Shift+m move container to workspace $ws7
 bindsym $mod+Shift+q move container to workspace $wsq
 bindsym $mod+Shift+w move container to workspace $wsw
 bindsym $mod+Shift+e move container to workspace $wse
@@ -197,18 +202,19 @@ bar {
 		active_workspace	$blue           $blue           $darkblack
 		inactive_workspace	$darkblack      $darkblack      $white
 		urgent_workspace	$darkred        $darkred        $white
-}
+	}
 }
 
 ###################
 # Custom Keybinds #
 ###################
+
 # dmenu
 # bindsym $mod+d exec --no-startup-id ~/.scripts/dmenu.sh
 # bindsym $mod+shift+d exec --no-startup-id i3-dmenu-desktop
 
 # Rofi
-bindsym $mod+d exec --no-startup-id rofi -show combi -run-shell-command '{terminal} -e zsh -ic "{cmd} && read"'
+bindsym $mod+space exec --no-startup-id rofi -show combi -run-shell-command '{terminal} -e zsh -ic "{cmd} && read"'
 # bindsym $mod+shift+d exec rofi -show drun
 
 # rofi-pass
@@ -230,7 +236,7 @@ bindsym --release Shift+Print exec "maim -s | tee ~/Pictures/screenshots/$(date 
 bindsym $mod+F1 exec feh --no-startup-id ~/.config/i3/popups/vi-vim-cheat-sheet.gif
 
 # spotify
-bindsym $mod+m exec "$TERM -e spt"
+# bindsym $mod+m exec "$TERM -e spt"
 
 # nmtui
 # bindsym $mod+n exec "$TERM -e nmtui"
@@ -244,6 +250,7 @@ bindsym $mod+p exec cat /home/ktz/Documents/Path\ of\ Exile/sanctum_rooms | dmen
 # notification
 bindsym $mod+n exec dunstctl close-all
 bindsym $mod+Shift+n exec dunstctl history-pop
+bindsym $mod+shift+period   exec "dunstctl context"
 ##################
 # Window Customs #
 ##################
@@ -265,8 +272,11 @@ for_window [class="feh"] floating enable
 # unity floats
 for_window [class="Unity"] floating enable
 
+# floorboardfx floats
+for_window [class="Katana-Mk2-FxFloorBoard"] floating enable
+
 # steam floats
-for_window [class="steam"] floating enable
+# for_window [class="steamwebhelper"] floating enable
 
 #steamtinkerlaunch floats
 for_window [class="Yad"] floating enable

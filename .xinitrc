@@ -9,10 +9,19 @@ if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/x11/xprofile" ]; then
 else
 	. "$HOME/.xprofile"
 fi
+
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+ for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+  [ -x "$f" ] && . "$f"
+ done
+ unset f
+fi
+
 xset r rate 250 40
 exec i3
 # exec cinnamon-session
 # exec xfce4-session
+# export DESKTOP_SESSION=plasma
 # exec startplasma-x11
 # exec gnome-session
 # exec /usr/local/bin/dwm
