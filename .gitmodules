@@ -8,6 +8,3 @@
 [submodule ".scripts/statusbar/i3blocks-markets"]
 	path = .scripts/statusbar/i3blocks-markets
 	url = git@github.com:DWShuo/i3blocks-markets.git
-[submodule "voidrice"]
-	path = voidrice
-	url = git@github.com:LukeSmithxyz/voidrice.git

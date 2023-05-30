@@ -44,7 +44,7 @@ bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
 # Delete
-bindkey '^[[P' delete-char
+bindkey '^[[3~' delete-char
 
 # # Home/End
 bindkey '^[[H'  beginning-of-line

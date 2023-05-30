@@ -1,6 +1,6 @@
 configuration {
     show-icons: true;
     terminal: "alacritty";
-    combi-modi: "drun,run,windows,ssh";
+    combi-modi: "drun,run,windows,ssh,combi";
 }
 @theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
