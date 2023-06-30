@@ -48,7 +48,7 @@ return require('packer').startup(function(use)
 	  {'L3MON4D3/LuaSnip'},     -- Required
   };
 
-  -- Lual
+  -- which-key
   use {
       "folke/which-key.nvim",
       config = function()
@@ -61,5 +61,18 @@ return require('packer').startup(function(use)
           }
       end
   };
-}
+
+  -- Comment.nvim
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  };
+
+  -- barbar
+  use 'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+  use 'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+  use 'romgrk/barbar.nvim',
+};
 end)

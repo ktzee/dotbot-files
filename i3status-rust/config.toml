@@ -5,8 +5,14 @@ icons = "material-nf"
 
 [[block]]
 block = "custom"
+command = "/usr/bin/xkb-switch -W"
+interval = "once"
+persistent = true
+
+[[block]]
+block = "custom"
 cycle = ["echo OFF", "echo ON"]
-interval = 1
+interval = "once"
 [[block.click]]
 button = "left"
 cmd = "~/.scripts/lights/strip_toggle"

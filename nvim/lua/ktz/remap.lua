@@ -32,7 +32,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank Line to Sys Clip" })
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- format buffer with LSP
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format Buffer" })
+vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format Buffer" })
 
 -- start replacing the word you're on
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Start Replacing this word"})

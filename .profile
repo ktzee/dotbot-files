@@ -10,10 +10,21 @@ export FZF_ALT_C_OPTS='--select-1 --exit-0'
 export LESSHISTFILE="$HOME/.cache/.lesshst"
 export READER="zathura"
 export TERMINAL="alacritty"
-export TERM="alacritty"
+export TERM="screen-256color"
 export BROWSER="brave"
 export EDITOR="nvim"
 export GOPATH=$HOME/go
+
+# xdg vars
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# clean home
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export GOPATH="$XDG_DATA_HOME"/go
+export ELECTRUMDIR="$XDG_DATA_HOME/electrum"
 
 # PATH
 export PATH="${PATH}:$HOME/AppImage:$HOME/.scripts/:$HOME/.config/nvim/plugged/vim-live-latex-preview/bin:$GOPATH/bin:$HOME/.java/graalvm/bin:$HOME/.java/bin/:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.scripts/statusbar"

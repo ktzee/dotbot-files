@@ -1,5 +1,5 @@
 # # Add colors
-# autoload -U colors && colors
+autoload -U colors && colors
 
 # # Custom PS1
 # PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
@@ -106,7 +106,7 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey "^e" edit-command-line
 
 # nvm
-[ -f "/usr/share/nvm/init-nvm.sh" ] && source /usr/share/nvm/init-nvm.sh
+# [ -f "/usr/share/nvm/init-nvm.sh" ] && source /usr/share/nvm/init-nvm.sh
 
 # wal sequence
 # [ -f "$HOME/.cache/wal/sequences" ] && (/usr/bin/cat ~/.cache/wal/sequences &)
@@ -125,3 +125,6 @@ prompt pure
 
 # theme.sh https://github.com/lemnos/theme.sh
 theme.sh hemisu-dark
+
+# rtx
+eval "$(rtx activate zsh)"

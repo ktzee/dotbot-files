@@ -7,6 +7,7 @@ lsp.ensure_installed({
   'rust_analyzer',
   'eslint',
   'luau_lsp',
+  'cssls',
 })
 
 -- Fix Undefined global 'vim'
@@ -15,11 +16,14 @@ lsp.nvim_workspace()
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
+-- completion mappings
 local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+  ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
+  ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
+  ['<CR>'] = cmp.mapping.confirm({ select = true }),
   ["<C-Space>"] = cmp.mapping.complete(),
+  ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+  ['<C-d>'] = cmp.mapping.scroll_docs(4),
 })
 
 cmp_mappings['<Tab>'] = nil
@@ -53,8 +57,6 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
-
-lsp.setup()
 
 vim.diagnostic.config({
     virtual_text = true
