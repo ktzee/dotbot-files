@@ -356,9 +356,10 @@ cursor:
 # - `mods` (see key bindings)
 #mouse_bindings:
 #  - { mouse: Middle, action: PasteSelection }
-
+key_bindings:
+  - { key: P, mods: Control|Shift, chars: "\x1b[80;5u]"}
 # Key bindings
-#
+
 # Key bindings are specified as a list of objects. For example, this is the
 # default paste binding:
 #

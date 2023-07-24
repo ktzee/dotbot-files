@@ -8,11 +8,11 @@ lsp.ensure_installed({
   'eslint',
   'luau_lsp',
   'cssls',
+  'emmet-ls'
 })
 
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
-
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}

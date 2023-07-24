@@ -17,7 +17,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-xset r rate 250 40
+xset r rate 200 40
 exec i3
 # exec cinnamon-session
 # exec xfce4-session

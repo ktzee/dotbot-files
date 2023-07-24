@@ -48,6 +48,20 @@ return require('packer').startup(function(use)
 	  {'L3MON4D3/LuaSnip'},     -- Required
   };
 
+  -- emmet-vim
+  use("mattn/emmet-vim"),
+  -- cme-emmet-vim
+  use {
+      "dcampos/cmp-emmet-vim",
+      require 'cmp'.setup {
+  sources = {
+    {
+        name = 'emmet_vim',
+    }
+  }
+}
+},
+
   -- which-key
   use {
       "folke/which-key.nvim",

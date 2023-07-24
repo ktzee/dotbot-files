@@ -10,7 +10,7 @@ polkit-dumb-agent &
 syncthing > $HOME/.local/log/syncthing &
 feh --bg-scale $HOME/Pictures/wallpapers/current --no-fehbg &
 for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done &
-setxkbmap -layout us,it -option 'grp:shifts_toggle'
+setxkbmap -layout us,it -option 'grp:shifts_toggle' 
 # noisetorch &
 # /usr/lib/kdeconnectd &
 # /usr/bin/kdeconnect-indicator &

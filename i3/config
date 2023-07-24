@@ -30,13 +30,21 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+# Show notes in scratchpad if it exists
+bindsym $mod+equal [class="^obsidia"] scratchpad show
+
+# Show terminal in scratchpad if it exists
+bindsym $mod+v [class="^Alacri"] scratchpad show
+
+# Left and Right to change workspaces
 bindsym $mod+Left workspace prev
-# bindsym $mod+Down focus down
-# bindsym $mod+Up focus up
 bindsym $mod+Right workspace next
-bindsym $mod+d workspace next
-bindsym $mod+Shift+d workspace prev
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
@@ -57,7 +65,7 @@ bindsym $mod+Shift+Tab workspace prev
 #bindsym $mod+h split h
 
 # toggle horizontal/vertical split
-bindsym $mod+v split toggle
+bindsym $mod+Shift+v split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -92,7 +100,6 @@ set $ws7 "7 Music "
 set $wsq "8 Browser 爵"
 set $wsw "9 "
 set $wse "10 "
-
 
 # switch to specific workspace
 bindsym $mod+1 workspace $ws1
@@ -242,10 +249,13 @@ bindsym $mod+F1 exec feh --no-startup-id ~/.config/i3/popups/vi-vim-cheat-sheet.
 # bindsym $mod+n exec "$TERM -e nmtui"
 
 # OCR - image text to clipboard
-bindsym $mod+i exec maim -s | tesseract stdin stdout -l eng \ | xclip -in -selection clipboard
+# bindsym $mod+i exec maim -s | tesseract stdin stdout -l eng \ | xclip -in -selection clipboard
 
 # poe sanctum rooms
-bindsym $mod+p exec cat /home/ktz/Documents/Path\ of\ Exile/sanctum_rooms | dmenu -i -markup-rows
+# bindsym $mod+p exec cat /home/ktz/Documents/Path\ of\ Exile/sanctum_rooms | dmenu -i -markup-rows
+
+# rofi-emoji
+bindsym $mod+i exec rofi -modi emoji -show emoji
 
 # notification
 bindsym $mod+n exec dunstctl close-all
@@ -256,7 +266,7 @@ bindsym $mod+shift+period   exec "dunstctl context"
 ##################
 
 # disable titlebars
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 
 # gaps
 gaps inner 6
@@ -299,6 +309,8 @@ for_window [title="^pinentry"] floating enable
 for_window [title="nmtui"] floating enable
 # always float qjackctl
 for_window [class="QjackCtl"] floating enable
+# always open Obsidian in a scratchpad
+for_window [class="^obsidia"] move scratchpad
 
 ################
 # Custom Execs #

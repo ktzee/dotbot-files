@@ -6,9 +6,8 @@ wk.register({
   ["<leader>"] = {
     f = {
       name = "+file",
-        f = { builtin.find_files, "Find File" },
+        f = { builtin.git_files, "Git Files Find" },
         b = { builtin.buffers, "Find Buffers" },
-        c = { builtin.commands, "Find nvim Commands" },
         t = { builtin.treesitter, "Find Treesitter Symbols" },
         g = { builtin.live_grep, "Live Grep" },
         G = { function() builtin.grep_string({ search = vim.fn.input("Grep > ")}) end, "Grep Project" },
@@ -16,7 +15,10 @@ wk.register({
   },
 })
 -- search only files in the git repo
-vim.keymap.set('n', '<C-p>', builtin.git_files, {desc = "Git Files Find"})
+vim.keymap.set('n', '<C-p>', builtin.find_files, {desc = "Find Files"})
+-- search through nvim commands (might require terminal configuration: 
+-- https://www.reddit.com/r/neovim/comments/mbj8m5/how_to_setup_ctrlshiftkey_mappings_in_neovim_and/)
+vim.keymap.set('n', '<C-S-p>', builtin.commands, {desc = "Commands"})
 -- project find
 -- vim.keymap.set('n', '<leader>pf', builtin.find_files, {desc = "Project Find"})
 -- grep for a pattern across files
