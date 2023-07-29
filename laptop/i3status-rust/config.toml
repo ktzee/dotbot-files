@@ -39,7 +39,7 @@ driver = "pulseaudio"
 [[block]]
 block = "sound"
 driver = "pulseaudio"
-format = "$icon $volume"
+format = "$icon {$volume|}"
 
 [[block]]
 block = "time"
