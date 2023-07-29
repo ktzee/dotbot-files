@@ -3,6 +3,9 @@ set $mod Mod4
 
 set $TERM alacritty
 
+# Stop mouse warping 
+mouse_warping none
+
 # Disable scroll wheel
 bindsym button4 nop
 bindsym button5 nop
@@ -10,7 +13,7 @@ bindsym button5 nop
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango:Inconsolata for Powerline 14
-font pango:FiraCode Nerd Font 11
+font pango:Firacode Nerd Font 0
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -27,12 +30,21 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
 
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+# Show notes in scratchpad if it exists
+bindsym $mod+equal [class="^obsidia"] scratchpad show
+
+# Show terminal in scratchpad if it exists
+bindsym $mod+v [class="^Alacri"] scratchpad show
+
+# Left and Right to change workspaces
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
@@ -45,26 +57,30 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# switch to workspace left/right
+bindsym $mod+Tab focus left
+bindsym $mod+Shift+Tab workspace prev
+
 # split in horizontal orientation
 #bindsym $mod+h split h
 
 # toggle horizontal/vertical split
-bindsym $mod+v split toggle
+bindsym $mod+Shift+v split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-# cycle throuth layouts
-bindsym $mod+t layout toggle
+# cycle trough layouts
+bindsym $mod+t layout toggle tabbed splith
 # Toggle h/v split layout
-bindsym $mod+s layout toggle split
+# bindsym $mod+s layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+f floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 # bindsym $mod+a focus parent
@@ -81,22 +97,18 @@ set $ws4 "4 Games "
 set $ws5 "5 Games "
 set $ws6 "6 Launchers "
 set $ws7 "7 Music "
-set $wsq "8 Browser 爵"
+set $wsq "8 Browser "
 set $wsw "9 "
 set $wse "10 "
-
-# switch to workspace left/right
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
 
 # switch to specific workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
+bindsym $mod+a workspace $ws5
+bindsym $mod+s workspace $ws6
+bindsym $mod+m workspace $ws7
 bindsym $mod+q workspace $wsq
 bindsym $mod+w workspace $wsw
 bindsym $mod+e workspace $wse
@@ -106,9 +118,9 @@ bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+a move container to workspace $ws5
+bindsym $mod+Shift+s move container to workspace $ws6
+bindsym $mod+Shift+m move container to workspace $ws7
 bindsym $mod+Shift+q move container to workspace $wsq
 bindsym $mod+Shift+w move container to workspace $wsw
 bindsym $mod+Shift+e move container to workspace $wse
@@ -173,7 +185,7 @@ set_from_resource $white	color15 #000000
 set $transparent        		#00000000
 
 #                       BORDER		BACKGROUND	TEXT		INDICATOR               CHILD_BORDER
-client.focused		$red		$red		$magenta	$darkmagenta		$darkblue
+client.focused		$black		$black		$magenta	$darkmagenta		$darkblue
 client.unfocused	$transparent	$blue		$white		$darkblue		$darkblack
 client.focused_inactive	$transparent	$blue		$white		$darkblue		$darkblack
 client.urgent		$darkred	$darkred	$black		$darkred		$darkred
@@ -183,6 +195,7 @@ client.background $black
 # i3bar
 bar {
 	# status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
+	font pango:FiraCode Nerd Font 12
 	status_command i3status-rs ~/.config/i3status-rust/config.toml
 	position top
 	strip_workspace_numbers yes
@@ -196,18 +209,19 @@ bar {
 		active_workspace	$blue           $blue           $darkblack
 		inactive_workspace	$darkblack      $darkblack      $white
 		urgent_workspace	$darkred        $darkred        $white
-}
+	}
 }
 
 ###################
 # Custom Keybinds #
 ###################
+
 # dmenu
 # bindsym $mod+d exec --no-startup-id ~/.scripts/dmenu.sh
 # bindsym $mod+shift+d exec --no-startup-id i3-dmenu-desktop
 
 # Rofi
-bindsym $mod+d exec --no-startup-id rofi -show combi -run-shell-command '{terminal} -e zsh -ic "{cmd} && read"'
+bindsym $mod+space exec --no-startup-id rofi -show combi -run-shell-command '{terminal} -e zsh -ic "{cmd} && read"'
 # bindsym $mod+shift+d exec rofi -show drun
 
 # rofi-pass
@@ -229,29 +243,64 @@ bindsym --release Shift+Print exec "maim -s | tee ~/Pictures/screenshots/$(date 
 bindsym $mod+F1 exec feh --no-startup-id ~/.config/i3/popups/vi-vim-cheat-sheet.gif
 
 # spotify
-bindsym $mod+m exec "$TERM -e spt"
+# bindsym $mod+m exec "$TERM -e spt"
 
 # nmtui
-bindsym $mod+n exec "$TERM -e nmtui"
+# bindsym $mod+n exec "$TERM -e nmtui"
+
+# OCR - image text to clipboard
+# bindsym $mod+i exec maim -s | tesseract stdin stdout -l eng \ | xclip -in -selection clipboard
+
+# poe sanctum rooms
+# bindsym $mod+p exec cat /home/ktz/Documents/Path\ of\ Exile/sanctum_rooms | dmenu -i -markup-rows
+
+# rofi-emoji
+bindsym $mod+i exec rofi -modi emoji -show emoji
+
+# notification
+bindsym $mod+n exec dunstctl close-all
+bindsym $mod+Shift+n exec dunstctl history-pop
+bindsym $mod+shift+period   exec "dunstctl context"
 ##################
 # Window Customs #
 ##################
 
 # disable titlebars
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 
 # gaps
 gaps inner 6
 gaps outer 3
+# disable gaps when there's only one window
+# smart_gaps on
+# hide borders when there's only one window
+# hide_edge_borders both
 
 # images always float
 for_window [class="feh"] floating enable
+
+# unity floats
 for_window [class="Unity"] floating enable
 
-# awakened poe trade always float
+# floorboardfx floats
+for_window [class="Katana-Mk2-FxFloorBoard"] floating enable
+
+# steam floats
+# for_window [class="steamwebhelper"] floating enable
+
+#steamtinkerlaunch floats
+for_window [class="Yad"] floating enable
+
+# PoE floats
 for_window [class="steam_app_238960"] floating enable
+
+# awakened poe trade always float
 for_window [class="awakened-poe-trade"] floating enable
 for_window [class="poe-overlay"] floating enable
+
+# always float Diablo 2
+# for_window [title="Diablo II."] floating enable
+
 # Always float windows with title 'clipqr'.
 # This is for the clipqr.sh script which generates a QR code from clipboard.
 for_window [title="^clipqr$"] floating enable
@@ -260,6 +309,8 @@ for_window [title="^pinentry"] floating enable
 for_window [title="nmtui"] floating enable
 # always float qjackctl
 for_window [class="QjackCtl"] floating enable
+# always open Obsidian in a scratchpad
+for_window [class="^obsidia"] move scratchpad
 
 ################
 # Custom Execs #
@@ -277,7 +328,7 @@ for_window [class="QjackCtl"] floating enable
 # exec --no-startup-id picom --config ~/.config/picom/picom.conf
 #
 # # dunst
-# exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
+exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 #
 # # redshift
 # exec --no-startup-id redshift-qt
@@ -308,8 +359,8 @@ for_window [class="QjackCtl"] floating enable
 #################
 
 # double monitor setup
-set $firstMonitor DP-0
-set $secondMonitor HDMI-1
+set $firstMonitor DP-4
+set $secondMonitor DP-2
 
 # assign workspaces to monitor
 workspace $ws1 output $firstMonitor
@@ -325,11 +376,12 @@ workspace $wse output $secondMonitor
 
 # assign application to workspace
 assign [class="firefoxdeveloperedition"] $wsq
-assign [class="firefox"] $ws2
+assign [class="firefox"] $wsq
 assign [class="Chromium"] $ws2
 assign [class="Brave-browser"] $wsq
 assign [class="Signal"] $ws3
 assign [class="discord"] $ws3
+assign [class="WebCord"] $ws3
 assign [class="Hexchat"] $ws3
 assign [class="Ferdi"] $ws3
 assign [class="Steam"] $ws6

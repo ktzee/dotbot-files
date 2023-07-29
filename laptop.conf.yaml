@@ -6,7 +6,7 @@
 
 - link:
     ~/.xinitrc: laptop/.xinitrc
-    ~/.xprofile: .xprofile
+    ~/.xprofile: laptop/.xprofile
     ~/.zshenv: .zshenv
     ~/.profile: .profile
     ~/.gitconfig: .gitconfig

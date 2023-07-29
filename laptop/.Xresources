@@ -17,3 +17,5 @@
 *.color13: #FF1493
 *.color14: #00CCCC
 *.color15: #FFFAFA
+
+Xft.dpi: 120
