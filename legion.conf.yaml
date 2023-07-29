@@ -1,0 +1,14 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ["~"]
+
+- link:
+    ~/.xinitrc: laptop/.xinitrc
+    ~/.config/alacritty: laptop/alacritty
+    ~/.config/i3status-rust: laptop/i3status-rust
+    ~/.Xresources: laptop/.Xresources
+    ~/.xprofile: laptop/.xprofile
+    ~/.config/i3: laptop/i3
+    ~/.config/i3status-rust: laptop/i3status-rust
