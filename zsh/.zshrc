@@ -99,8 +99,8 @@ lfcd () {
     fi
 }
 
-bindkey -s '^o' 'lfcd\n'  # zsh
-
+# bindkey -s '^o' 'lfcd\n'  # zsh
+bindkey -s '^o' 'joshuto\n' # open file manager
 # Edit command line in vim with ctrl-e
 autoload edit-command-line; zle -N edit-command-line
 bindkey "^e" edit-command-line
@@ -136,3 +136,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# zoxide
+eval "$(zoxide init zsh)"

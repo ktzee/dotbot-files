@@ -12,11 +12,18 @@ persistent = true
 
 [[block]]
 block = "battery"
-format = "$icon $percentage $time"
-device = "BAT0"
+format = "$icon $percentage {$time |}"
+not_charging_format = "NOT-C $icon $percentage "
+device = "DisplayDevice"
+driver = "upower"
 
 [[block]]
 block = "backlight"
+
+[[block]]
+block = "nvidia_gpu"
+interval = 1
+format = " $icon RTX3070 $utilization $temperature $clocks "
 
 [[block]]
 block = "cpu"
