@@ -138,4 +138,4 @@ esac
 # pnpm end
 
 # zoxide
-eval "$(zoxide init zsh)"
+# eval "$(zoxide init zsh)"
