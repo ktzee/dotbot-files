@@ -8,7 +8,28 @@ lsp.ensure_installed({
   'eslint',
   'luau_lsp',
   'cssls',
-  'emmet-ls'
+  'emmet-ls',
+  'gopls'
+})
+
+-- gopls --
+local lspconfig = require("lspconfig")
+local util = require "lspconfig/util"
+lspconfig.gopls.setup({
+    on_attach,
+    capabilities,
+    cmd = {"gopls"},
+    filetypes = { "go", "gomod", "gowork", "gotmpl" },
+    root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+    settings = {
+        gopls = {
+            completeUnimported = true,
+            usePlaceholders = true,
+            analyses = {
+                unusedparams = true,
+            }
+        }
+    }
 })
 
 -- Fix Undefined global 'vim'

@@ -112,7 +112,7 @@ bindkey "^e" edit-command-line
 # [ -f "$HOME/.cache/wal/sequences" ] && (/usr/bin/cat ~/.cache/wal/sequences &)
 
 # Load profile
-# source /home/ktz/.profile
+source /home/ktz/.profile
 # Load zsh-pure-prompt if installed
 autoload -U promptinit; promptinit
 prompt pure
@@ -138,4 +138,4 @@ esac
 # pnpm end
 
 # zoxide
-# eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh)"

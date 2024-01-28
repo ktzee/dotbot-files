@@ -62,6 +62,7 @@ return require('packer').startup(function(use)
 }
 },
 
+
   -- which-key
   use {
       "folke/which-key.nvim",
@@ -89,4 +90,10 @@ return require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
   use 'romgrk/barbar.nvim',
 };
+
+-- null-ls
+use 'jose-elias-alvarez/null-ls.nvim'
+
+-- gopher
+use 'olexsmir/gopher.nvim'
 end)
