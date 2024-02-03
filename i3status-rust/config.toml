@@ -3,6 +3,17 @@
 icons = "material-nf"
 
 [[block]]
+block = "music"
+format = " $icon {$combo.str(max_w:30) $play $next $volume|}"
+player = "ncspot"
+[[block.click]]
+button = "up"
+action = "volume_up"
+[[block.click]]
+button = "down"
+action = "volume_down"
+
+[[block]]
 block = "custom"
 command = "/usr/bin/xkb-switch -W"
 interval = "once"
@@ -29,12 +40,12 @@ interval = 120
 [[block]]
 block = "cpu"
 interval = 1
-format = " $icon $barchart $utilization "
+format = " $icon $utilization "
 format_alt = " $icon $frequency{ $boost|} "
 
 [[block]]
 block = "nvidia_gpu"
-format = " $icon RTX3070 $utilization $temperature $clocks "
+format = " $icon $utilization $temperature $clocks "
 
 
 [[block]]

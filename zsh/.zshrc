@@ -84,35 +84,16 @@ bindkey "^[[1;3D" backward-word-dir
 # Include hidden files in autocomplete:
 _comp_options+=(globdots)
 
-# Use lf (https://github.com/gokcehan/lf) to switch directories and bind it to ctrl-o
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        if [ -d "$dir" ]; then
-            if [ "$dir" != "$(pwd)" ]; then
-                cd "$dir"
-            fi
-        fi
-    fi
-}
-
-# bindkey -s '^o' 'lfcd\n'  # zsh
-bindkey -s '^o' 'joshuto\n' # open file manager
 # Edit command line in vim with ctrl-e
 autoload edit-command-line; zle -N edit-command-line
 bindkey "^e" edit-command-line
 
-# nvm
-# [ -f "/usr/share/nvm/init-nvm.sh" ] && source /usr/share/nvm/init-nvm.sh
-
-# wal sequence
-# [ -f "$HOME/.cache/wal/sequences" ] && (/usr/bin/cat ~/.cache/wal/sequences &)
+# Where should I put you?
+bindkey -s ^f "tmux-sessionizer\n"
 
 # Load profile
 source /home/ktz/.profile
+
 # Load zsh-pure-prompt if installed
 autoload -U promptinit; promptinit
 prompt pure

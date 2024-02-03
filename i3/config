@@ -240,7 +240,7 @@ bindsym --release $mod+Print exec "maim -i $(xdotool selectwindow) | tee ~/Pictu
 bindsym --release Shift+Print exec "maim -s | tee ~/Pictures/screenshots/$(date +%F-%H.%M.%S).png | xclip -selection clipboard -t image/png && notify-send 'Area Captured'"
 
 # Vim Cheatsheet
-bindsym $mod+F1 exec feh --no-startup-id ~/.config/i3/popups/vi-vim-cheat-sheet.gif
+bindsym $mod+F1 exec feh --no-startup-id ~/.config/i3/popups/10-Best-VIM-Cheat-Sheet-02.jpg
 
 # spotify
 # bindsym $mod+m exec "$TERM -e spt"

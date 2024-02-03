@@ -12,10 +12,9 @@
     ~/.gitconfig: .gitconfig
     ~/.scripts: .scripts
     ~/.gitconfig: .gitconfig
+    ~/.config/tmux: tmux
     ~/.config/spotifyd: spotifyd
     ~/.config/zellij: zellij
-    ~/.config/tmux/tmux.conf: tmux.conf
-    ~/.config/tmux/tmux.conf.local: tmux.conf.local
     ~/.config/mimeapps.list: mimeapps.list
     ~/.config/starship.toml: starship.toml
     ~/.config/aliasrc: aliasrc
