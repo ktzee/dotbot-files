@@ -108,7 +108,7 @@ prompt pure
 theme.sh hemisu-dark
 
 # rtx
-eval "$(rtx activate zsh)"
+eval "$(mise activate zsh)"
 
 # pnpm
 export PNPM_HOME="/home/ktz/.local/share/pnpm"
