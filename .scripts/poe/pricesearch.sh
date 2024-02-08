@@ -10,8 +10,8 @@ url2="https://poe.ninja/api/data/currencyoverview?league=$league&type=$selection
 
 case $selection in
   Currency | Fragment)
-    curl -s "$url2" | jq -r '.lines[] | .currencyTypeName + "*" + (.receive.value|tostring[0:6]) + "c"' | column -ts "*" | dmenu -i;;
+    curl -s "$url2" | jq -r '.lines[] | .currencyTypeName + "*" + (.receive.value|tostring[0:6]) + "c"' | column -ts "*" | rofi -dmenu -i;;
   DeliriumOrb | Scarab | Oil | Essence | Fossil | DivinationCard | UniqueWeapon)
-    curl -s "$url" | jq -rc '.lines[] | .name + " - " + (.chaosValue | tostring) + "c - " + (.divineValue | tostring) + "d"' | column -ts "-" | dmenu -i;;
+    curl -s "$url" | jq -rc '.lines[] | .name + " - " + (.chaosValue | tostring) + "c - " + (.divineValue | tostring) + "d"' | column -ts "-" | rofi -dmenu -i;;
 esac
 
