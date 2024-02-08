@@ -9,7 +9,7 @@
 league="Affliction"
 declare -a item_type=("DeliriumOrb" "Scarab" "Currency" "Fragment" "Oil" "Essence" "Fossil" "DivinationCard" "UniqueWeapon")
 
-selection=$(printf '%s\n' "${item_type[@]}" | dmenu -i)
+selection=$(printf '%s\n' "${item_type[@]}" | rofi -dmenu -i)
 # there are 2 main endpoints: /itemoverview and /currencyoverview
 url="https://poe.ninja/api/data/itemoverview?league=$league&type=$selection"
 url2="https://poe.ninja/api/data/currencyoverview?league=$league&type=$selection"
