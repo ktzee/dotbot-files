@@ -1,4 +1,10 @@
 #! /usr/bin/bash
+# Quick Demo: https://imgur.com/a/Gd08qhK
+# Opening a new tab (or looking for my open poe.ninja tab) each time bothered me, so I made a small script that uses jq to parse poe.ninja data and rofi to show a menu of different item types. 
+# Selecting that item type shows you a list of prices.
+#
+# Make sure jq and rofi are installed.
+
 
 league="Affliction"
 declare -a item_type=("DeliriumOrb" "Scarab" "Currency" "Fragment" "Oil" "Essence" "Fossil" "DivinationCard" "UniqueWeapon")
