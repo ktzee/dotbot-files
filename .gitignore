@@ -10,3 +10,4 @@ zsh/.zsh_history
 zsh/.zdirs
 zsh/.cache
 tmux/.tmux/
+tmux/plugins/
