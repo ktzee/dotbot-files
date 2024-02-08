@@ -21,12 +21,15 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-
 # clean home
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export GOPATH="$XDG_DATA_HOME"/go
 export GOBIN="$XDG_DATA_HOME"/go/bin
 export ELECTRUMDIR="$XDG_DATA_HOME/electrum"
+
+# charm client
+# use the local charm instance instead of charm cloud
+export CHARM_HOST=localhost
 
 # PATH
 export PATH="${PATH}:$HOME/AppImage:$HOME/.scripts/:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.scripts/statusbar:$GOBIN"

@@ -253,6 +253,7 @@ bindsym $mod+F1 exec feh --no-startup-id ~/.config/i3/popups/10-Best-VIM-Cheat-S
 
 # poe sanctum rooms
 # bindsym $mod+p exec cat /home/ktz/Documents/Path\ of\ Exile/sanctum_rooms | dmenu -i -markup-rows
+bindsym $mod+Shift+p exec /home/ktz/.scripts/poe/pricesearch.sh
 
 # rofi-emoji
 bindsym $mod+i exec rofi -modi emoji -show emoji
