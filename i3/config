@@ -232,12 +232,12 @@ bindsym	$mod+Ctrl+l exec i3lock --color 111111
 
 # Desktop screenshot
 #bindsym --release Print exec "scrot ~/Pictures/scrot/$(date --iso-8601='seconds').png -m -e 'xclip -selection c -t image/png < $f'"
-bindsym --release Print exec "maim | tee ~/Pictures/screenshots/$(date +%F-%H.%M.%S).png | xclip -selection clipboard -t image/png && notify-send 'Desktop Screenshot Captured'"
+bindsym --release Print exec "maim -u | tee ~/Pictures/screenshots/$(date +%F-%H.%M.%S).png | xclip -selection clipboard -t image/png && notify-send 'Desktop Screenshot Captured'"
 # Choose window
-bindsym --release $mod+Print exec "maim -i $(xdotool selectwindow) | tee ~/Pictures/screenshots/$(date +%F-%H.%M.%S).png | xclip -selection clipboard -t image/png && notify-send 'Window Captured'"
+bindsym --release $mod+Print exec "maim -i -u $(xdotool selectwindow) | tee ~/Pictures/screenshots/$(date +%F-%H.%M.%S).png | xclip -selection clipboard -t image/png && notify-send 'Window Captured'"
 # Selection screenshot
 # bindsym --release Shift+Print exec "scrot ~/Pictures/scrot/$(date --iso-8601='seconds').png -s -e 'xclip -selection c -t image/png < $f'"
-bindsym --release Shift+Print exec "maim -s | tee ~/Pictures/screenshots/$(date +%F-%H.%M.%S).png | xclip -selection clipboard -t image/png && notify-send 'Area Captured'"
+bindsym --release Shift+Print exec "maim -s -u | tee ~/Pictures/screenshots/$(date +%F-%H.%M.%S).png | xclip -selection clipboard -t image/png && notify-send 'Area Captured'"
 
 # Vim Cheatsheet
 bindsym $mod+F1 exec feh --no-startup-id ~/.config/i3/popups/10-Best-VIM-Cheat-Sheet-02.jpg
