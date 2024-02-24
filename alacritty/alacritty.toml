@@ -34,7 +34,7 @@ unfocused_hollow = true
 TERM = "screen-256color"
 
 [font]
-size = 10
+size = 11
 
 [font.normal]
 family = "FiraCode Nerd Font"

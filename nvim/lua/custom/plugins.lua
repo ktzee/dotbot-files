@@ -24,6 +24,12 @@ local plugins = {
     end
   },
   {
+    "tpope/vim-fugitive",
+    event = "VeryLazy",
+    init = function()
+    end
+  },
+  {
     "leoluz/nvim-dap-go",
     ft = "go",
     dependencies = "mfussenegger/nvim-dap",
