@@ -28,12 +28,12 @@ M.mine = {
     },
   },
   v = {
-    ["<A-j>"] = {
+    ["J"] = {
       [[:m '>+1<CR>gv=gv]],
       "Move selected text down"
     },
-    ["<A-k>"] = {
-      ":m '>-2<CR>gv=gv",
+    ["K"] = {
+      ":m '<-2<CR>gv=gv",
       "Move selected text up"
     },
   },
@@ -62,7 +62,7 @@ M.harpoon = {
       end,
       "Harpoon add file",
     },
-    ["<A-e>"] = {
+    ["<leader>e"] = {
       function()
         require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
       end,
@@ -96,6 +96,7 @@ M.harpoon = {
 }
 
 M.telescope = {
+  plugin = true,
   n = {
     ["<C-p>"] = {
       function ()
@@ -109,25 +110,19 @@ M.telescope = {
       end,
       "Find open buffers with Telescope"
     },
-    ["<C-;>"] = {
+    ["<leader>fc"] = {
       function ()
         require('telescope.builtin').commands()
       end,
       "Find commands with Telescope"
     },
-    ["<leader>?"] = {
-      function ()
-        require('telescope.builtin').treesitter()
-      end,
-      "Lists Function names, variables, from Treesitter!"
-    },
-    ["<leader>;"] = {
+    ["<leader>ld"] = {
       function ()
         require('telescope.builtin').diagnostics()
       end,
-      "Lists diagnostics, from Treesitter!"
+      "List Diagnostics from Treesitter!"
     },
-    ["<leader>e"] = {
+    ["<A-e>"] = {
       ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
       "Open Telescope File Manager"
     }

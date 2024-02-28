@@ -18,6 +18,8 @@ M.treesitter = {
     "python",
     "templ",
     "svelte",
+    "regex",
+    "bash"
   },
   indent = {
     enable = true,
