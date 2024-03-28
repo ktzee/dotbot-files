@@ -74,3 +74,4 @@ audio/basic=vlc.desktop
 audio/x-aiff=mpv.desktop
 audio/x-ms-wma=mpv.desktop
 video/mpeg=mpv.desktop
+x-scheme-handler/nxm-protocol=/home/ktz/.local/share/applications/vortex-downloads-handler.desktop

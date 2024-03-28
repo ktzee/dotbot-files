@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 -- user-defined plugins and their configuration
 -- uses lazy.nvim
@@ -16,19 +16,29 @@ local plugins = {
       "svelte",
       "rust-analyzer",
       "prettier",
-},
+    },
   },
   {
     "mfussenegger/nvim-dap",
     init = function()
-      require("core.utils").load_mappings("dap")
-    end
+      require("core.utils").load_mappings "dap"
+    end,
   },
   {
     "tpope/vim-fugitive",
     event = "VeryLazy",
-    init = function()
-    end
+    init = function() end,
+  },
+  {
+    'laytan/tailwind-sorter.nvim',
+    event = "VeryLazy",
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-lua/plenary.nvim' },
+    build = 'cd formatter && npm i && npm run build',
+    config = function ()
+      require('tailwind-sorter').setup({
+        on_save_enabled = true,
+      })
+    end,
   },
   {
     "folke/noice.nvim",
@@ -42,22 +52,22 @@ local plugins = {
           ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
         },
       },
-    -- you can enable a preset for easier configuration
+      -- you can enable a preset for easier configuration
       presets = {
         -- bottom_search = true, -- use a classic bottom cmdline for search
-        command_palette = true, -- position the cmdline and popupmenu together
+        command_palette = true,       -- position the cmdline and popupmenu together
         long_message_to_split = true, -- long messages will be sent to a split
-        inc_rename = false, -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = false, -- add a border to hover docs and signature help
+        inc_rename = false,           -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = false,       -- add a border to hover docs and signature help
       },
     },
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
-  },
-    config = function (_, opts)
-        require("noice").setup(opts)
-      end
+    },
+    config = function(_, opts)
+      require("noice").setup(opts)
+    end,
   },
   {
     "leoluz/nvim-dap-go",
@@ -65,8 +75,8 @@ local plugins = {
     dependencies = "mfussenegger/nvim-dap",
     config = function(_, opts)
       require("dap-go").setup(opts)
-      require("core.utils").load_mappings("dap_go")
-    end
+      require("core.utils").load_mappings "dap_go"
+    end,
   },
   {
     "mrcjkb/rustaceanvim",
@@ -75,14 +85,14 @@ local plugins = {
     dependencies = "neovim/nvim-lspconfig",
     config = function()
       require "custom.configs.rustaceanvim"
-    end
+    end,
   },
   {
     "rust-lang/rust.vim",
     ft = "rust",
-    init = function ()
+    init = function()
       vim.g.rustfmt_autosave = 1
-    end
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -95,8 +105,8 @@ local plugins = {
   },
   {
     "nvimtools/none-ls.nvim",
-    ft = {"go", "templ"},
-    opts = function ()
+    ft = { "go", "templ", "html"},
+    opts = function()
       -- these configs can be lenghty. Keep them in a separate file
       return require "custom.configs.null-ls"
     end,
@@ -106,29 +116,28 @@ local plugins = {
     ft = "go",
     config = function(_, opts)
       require("gopher").setup(opts)
-      require("core.utils").load_mappings("gopher")
+      require("core.utils").load_mappings "gopher"
     end,
     -- auto-install deps
-    build = function ()
+    build = function()
       vim.cmd [[silent! GoInstallDeps]]
-    end
+    end,
   },
   {
     "kylechui/nvim-surround",
     version = "*",
     event = "VeryLazy",
     config = function()
-      require("nvim-surround").setup({
-      })
-    end
+      require("nvim-surround").setup {}
+    end,
   },
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     event = "VeryLazy",
-    config = function ()
+    config = function()
       require("harpoon"):setup()
-    end
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -140,22 +149,22 @@ local plugins = {
       sources = {
         { name = "cmdline" },
         { name = "nvim_lsp" },
-        { name = "path"},
-        { name = "luasnip"},
+        { name = "path" },
+        { name = "luasnip" },
         { name = "buffer" },
-        { name = "nvim_lua"},
+        { name = "nvim_lua" },
       },
       experimental = {
-        ghost_text = true
+        ghost_text = true,
       },
     },
     dependencies = {
-      "L3MON4D3/LuaSnip",       -- snippets
+      "L3MON4D3/LuaSnip", -- snippets
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-cmdline",
       event = { "CmdLineEnter" },
-      opts = { history = true, updateevents = "CmdlineEnter, CmdlineChanged"},
+      opts = { history = true, updateevents = "CmdlineEnter, CmdlineChanged" },
       config = function(_, opts)
         require("plugins.configs.others").luasnip(opts)
         require "custom.configs.luasnip"
@@ -163,10 +172,10 @@ local plugins = {
 
         local cmp = require "cmp"
         cmp.setup.cmdline("/", {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = "buffer"},
-        },
+          mapping = cmp.mapping.preset.cmdline(),
+          sources = {
+            { name = "buffer" },
+          },
         })
 
         cmp.setup.cmdline(":", {
@@ -174,31 +183,31 @@ local plugins = {
           sources = cmp.config.sources({
             { name = "path" },
           }, {
-              name = "cmdline",
-              option = {
-               ignore_cmds = {"Man", "!"},
-              },
-            }),
-      })
+            name = "cmdline",
+            option = {
+              ignore_cmds = { "Man", "!" },
+            },
+          }),
+        })
       end,
     },
   },
   {
     "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
   },
   {
     require("telescope").setup {
       extensions = {
         file_browser = {
           hijack_netrw = false,
-        }
-      }
-    }
+        },
+      },
+    },
   },
   {
     "epwalsh/obsidian.nvim",
-    version = "*",  -- recommended, use latest release instead of latest commit
+    version = "*", -- recommended, use latest release instead of latest commit
     lazy = true,
     ft = "markdown",
     -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
@@ -240,18 +249,18 @@ local plugins = {
         time_format = "%H:%M",
         tags = "",
         substitutions = {
-        yesterday = function()
-          return os.date("%Y-%m-%d", os.time() - 86400)
-        end,
-        tomorrow = function()
-          return os.date("%Y-%m-%d", os.time() + 86400)
-        end
-      },
-      ui = {
+          yesterday = function()
+            return os.date("%Y-%m-%d", os.time() - 86400)
+          end,
+          tomorrow = function()
+            return os.date("%Y-%m-%d", os.time() + 86400)
+          end,
+        },
+        ui = {
           enable = true,
+        },
       },
     },
-  },
   },
 }
 return plugins

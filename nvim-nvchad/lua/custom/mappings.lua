@@ -6,35 +6,35 @@ M.mine = {
   n = {
     ["<leader>s"] = {
       [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-      "Replace under cursor"
+      "Replace under cursor",
     },
     ["<leader>pp"] = {
       [["_dP]],
-      "Paste below, retain content of register"
+      "Paste below, retain content of register",
     },
-    ["L"] = {"$"},
-    ["H"] = {"^"},
+    ["L"] = { "$" },
+    ["H"] = { "^" },
     ["<leader>qq"] = {
       ":wqa!<CR>",
-      "Save all buffers and force close nvim"
+      "Save all buffers and force close nvim",
     },
     ["<leader>xx"] = {
       ":!chmod +x %<CR>",
-      "Flag current file as executable"
+      "Flag current file as executable",
     },
     ["<leader>x"] = {
       ":!%:p<CR>",
-      "Flag current file as executable"
+      "Flag current file as executable",
     },
   },
   v = {
     ["J"] = {
       [[:m '>+1<CR>gv=gv]],
-      "Move selected text down"
+      "Move selected text down",
     },
     ["K"] = {
       ":m '<-2<CR>gv=gv",
-      "Move selected text up"
+      "Move selected text up",
     },
   },
 }
@@ -45,19 +45,19 @@ M.gopher = {
     -- "go struct json"
     ["<leader>gsj"] = {
       "<cmd> GoTagAdd json <CR>",
-      "Add json struct tags"
+      "Add json struct tags",
     },
     ["<leader>gsy"] = {
       "<cmd> GoTagAdd yaml <CR>",
-      "Add yaml struct tags"
-    }
-  }
+      "Add yaml struct tags",
+    },
+  },
 }
 
 M.harpoon = {
   n = {
     ["<leader>a"] = {
-      function ()
+      function()
         require("harpoon"):list():append()
       end,
       "Harpoon add file",
@@ -99,34 +99,34 @@ M.telescope = {
   plugin = true,
   n = {
     ["<C-p>"] = {
-      function ()
-        require('telescope.builtin').find_files()
+      function()
+        require("telescope.builtin").find_files()
       end,
-      "Find files with Telescope"
+      "Find files with Telescope",
     },
     ["<C-S-p>"] = {
-      function ()
-        require('telescope.builtin').buffers()
+      function()
+        require("telescope.builtin").buffers()
       end,
-      "Find open buffers with Telescope"
+      "Find open buffers with Telescope",
     },
     ["<leader>fc"] = {
-      function ()
-        require('telescope.builtin').commands()
+      function()
+        require("telescope.builtin").commands()
       end,
-      "Find commands with Telescope"
+      "Find commands with Telescope",
     },
     ["<leader>ld"] = {
-      function ()
-        require('telescope.builtin').diagnostics()
+      function()
+        require("telescope.builtin").diagnostics()
       end,
-      "List Diagnostics from Treesitter!"
+      "List Diagnostics from Treesitter!",
     },
     ["<A-e>"] = {
       ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
-      "Open Telescope File Manager"
-    }
-  }
+      "Open Telescope File Manager",
+    },
+  },
 }
 
 M.dap = {
@@ -134,41 +134,41 @@ M.dap = {
   n = {
     ["<leader>db"] = {
       "<cmd> DapToggleBreakpoint <CR>",
-      "Add breakpoint at line"
+      "Add breakpoint at line",
     },
     ["<leader>dus"] = {
-      function ()
-        local widgets = require('dap.ui.widgets');
-        local sidebar = widgets.sidebar(widgets.scopes);
-        sidebar.open();
+      function()
+        local widgets = require "dap.ui.widgets"
+        local sidebar = widgets.sidebar(widgets.scopes)
+        sidebar.open()
       end,
-      "Open debugging sidebar"
+      "Open debugging sidebar",
     },
     ["<leader>dc"] = {
-      function ()
-        require('dap').continue()
+      function()
+        require("dap").continue()
       end,
-      "Start/Continue Debug"
+      "Start/Continue Debug",
     },
     ["<leader>di"] = {
-      function ()
-        require('dap').step_into()
+      function()
+        require("dap").step_into()
       end,
-      "Step Into"
+      "Step Into",
     },
     ["<leader>do"] = {
-      function ()
-        require('dap').step_over()
+      function()
+        require("dap").step_over()
       end,
-      "Step Over"
+      "Step Over",
     },
     ["<leader>ds"] = {
-      function ()
-        require('dap').repl.open()
+      function()
+        require("dap").repl.open()
       end,
-      "Inspect State using REPL"
+      "Inspect State using REPL",
     },
-  }
+  },
 }
 
 M.dap_go = {
@@ -176,17 +176,17 @@ M.dap_go = {
   n = {
     ["<leader>dgt"] = {
       function()
-        require('dap-go').debug_test()
+        require("dap-go").debug_test()
       end,
-      "Debug go test"
+      "Debug go test",
     },
     ["<leader>dgl"] = {
       function()
-        require('dap-go').debug_last()
+        require("dap-go").debug_last()
       end,
-      "Debug last go test"
+      "Debug last go test",
     },
-  }
+  },
 }
 
 return M
