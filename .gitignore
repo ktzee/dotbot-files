@@ -4,6 +4,7 @@ nvim/undodir/
 nvim/plugin/
 lvim/plugin/
 nvim/plugin/packer_compiled.lua
+nvim/lazy-lock.json
 zsh/.zcompdump
 zsh/_deno
 zsh/.zsh_history
