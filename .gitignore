@@ -2,6 +2,7 @@ nvim/plugged/*
 nvim/.netrwhist
 nvim/undodir/
 nvim/plugin/
+nvim/lazy-lock.json
 lvim/plugin/
 nvim/plugin/packer_compiled.lua
 nvim/lazy-lock.json
@@ -11,4 +12,4 @@ zsh/.zsh_history
 zsh/.zdirs
 zsh/.cache
 tmux/.tmux/
-tmux/plugins/
+tmux/tmux/
