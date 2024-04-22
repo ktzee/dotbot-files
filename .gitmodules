@@ -8,3 +8,9 @@
 [submodule ".scripts/statusbar/i3blocks-markets"]
 	path = .scripts/statusbar/i3blocks-markets
 	url = git@github.com:DWShuo/i3blocks-markets.git
+[submodule "tmux/plugins/tmux-remote-sessions"]
+	path = tmux/plugins/tmux-remote-sessions
+	url = https://git::@github.com/tomhey/tmux-remote-sessions
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
